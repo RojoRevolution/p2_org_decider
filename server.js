@@ -16,6 +16,10 @@ app.use(express.static("public"));
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, '/views'));
 
+// Routes
+require("./routes/html-routes.js")(app);
+
+
 // Syncing database and starting server
 db.sequelize.sync().then(() => {
     app.listen(PORT, function () {
