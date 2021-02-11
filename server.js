@@ -1,6 +1,8 @@
 // Requiring npm packages
 const express = require('express');
 const path = require('path');
+const session = require('express');
+const passport = require('./config/passport');
 
 // Setting up port and requiring models for syncing
 const PORT = process.env.PORT || 8080;
@@ -11,6 +13,11 @@ const app = express();
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(express.static("public"));
+
+// Useing sessions to keep track of user's login status
+app.use(session({ secret: "keyboard cat", resave: true, saveUninitialized: true }));
+app.use(passport.initialize());
+app.use(passport.session());
 
 // Set Up EJS
 app.set('view engine', 'ejs');
