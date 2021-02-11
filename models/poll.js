@@ -26,7 +26,21 @@ module.exports = (sequelize, DataTypes) => {
       defaultValue: Sequelize.UUIDV4,
       autoIncrement: true,
       allowNull: false
+    },
+    winner: {
+      type: DataTypes.UUID,
+      defaultValue: Sequelize.UUIDV4,
+      autoIncrement: true,
+      allowNull: false
     }
   });
+
+  Poll.associate = (models) => {
+    // Every poll will have multiple Ideas
+    Poll.hasmany(models.Idea, {
+      onDelete: 'cascade'
+    });
+  };
+
   return Poll;
 };

@@ -22,5 +22,13 @@ module.exports = (sequelize, DataTypes) => {
       }
     }
   });
+
+  User.associate = (models) => {
+    // Each User will participate on multiple polls
+    User.hasMany(models.Poll, {
+      onDelete: 'cascade'
+    });
+  };
+  
   return User;
 };

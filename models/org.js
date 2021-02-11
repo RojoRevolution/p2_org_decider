@@ -1,3 +1,5 @@
+const author = require("../examples/13-Post-Author-Association/Solved/models/author");
+
 module.exports = (sequelize, DataTypes) => {
   const Org = sequelize.define('Org', {
     id : {
@@ -21,5 +23,13 @@ module.exports = (sequelize, DataTypes) => {
       allowNull: false
     }
   });
+
+  Org.associate = (models) => {
+    //Each Org will have several users
+    Org.hasMany(models.User, {
+      onDelete: 'cascade'
+    });
+  };
+  
   return Org;
 };

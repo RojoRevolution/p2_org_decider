@@ -26,6 +26,12 @@ module.exports = (sequelize, DataTypes) => {
       defaultValue: Sequelize.UUIDV4,
       autoIncrement: true,
       allowNull: false
+    },
+    votes: {
+      type: DataTypes.INTEGER,
+      defaultValue: Sequelize.UUIDV4,
+      autoIncrement: true,
+      allowNull: false
     }
   });
   return Idea;
