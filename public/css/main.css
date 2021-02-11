@@ -1,0 +1,11 @@
+/* Add Box-sizing for everything */
+html {
+    box-sizing: border-box;
+  }
+  *, *:before, *:after {
+    box-sizing: inherit;
+  }
+
+  .viewport-height {
+    height: 100%vh
+  }
