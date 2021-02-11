@@ -1,5 +1,5 @@
 module.exports = (sequelize, DataTypes) => {
-  const Org = sequelize.define('Org', {
+  const Idea = sequelize.define('Idea', {
     id : {
       type: DataTypes.UUID,
       defaultValue: Sequelize.UUIDV4,
@@ -14,12 +14,19 @@ module.exports = (sequelize, DataTypes) => {
         len: [1]
       }
     },
-    admin: {
+    description : {
+      type: DataTypes.STRING(200),
+      allowNull = false,
+      validate: {
+        len: [1]
+      }
+    },
+    creator: {
       type: DataTypes.UUID,
       defaultValue: Sequelize.UUIDV4,
       autoIncrement: true,
       allowNull: false
     }
   });
-  return Org;
+  return Idea;
 };
