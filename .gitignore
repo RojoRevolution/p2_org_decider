@@ -1,0 +1,11 @@
+#DS_Store
+.DS_Store
+
+#Node Modules
+node_modules
+
+#Package-Lock
+package-lock.json
+
+#ENV
+.env
