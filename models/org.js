@@ -2,24 +2,15 @@ const author = require("../examples/13-Post-Author-Association/Solved/models/aut
 
 module.exports = (sequelize, DataTypes) => {
   const Org = sequelize.define('Org', {
-    id : {
-      type: DataTypes.UUID,
-      defaultValue: Sequelize.UUIDV4,
-      autoIncrement: true,
-      allowNull: false,
-      primaryKey: true
-    },
     name : {
       type: DataTypes.STRING(70),
-      allowNull = false,
+      allowNull: false,
       validate: {
         len: [1]
       }
     },
     admin: {
-      type: DataTypes.UUID,
-      defaultValue: Sequelize.UUIDV4,
-      autoIncrement: true,
+      type: DataTypes.INTEGER,
       allowNull: false
     }
   });
