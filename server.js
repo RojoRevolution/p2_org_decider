@@ -12,12 +12,15 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(express.static("public"));
 
-// Set Up EJS
-app.set('view engine', 'ejs');
-app.set('views', path.join(__dirname, '/views'));
-
 // Routes
 require("./routes/html-routes.js")(app);
+
+// Set Up EJS
+app.set('view engine', 'ejs');
+// app.set('views', '/views');
+app.set('views', path.join(__dirname, '/views'));
+
+
 
 
 // Syncing database and starting server
