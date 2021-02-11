@@ -1,5 +1,3 @@
-const author = require("../examples/13-Post-Author-Association/Solved/models/author");
-
 module.exports = (sequelize, DataTypes) => {
   const Org = sequelize.define('Org', {
     name : {
