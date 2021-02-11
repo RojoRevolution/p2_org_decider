@@ -19,6 +19,7 @@
   "homepage": "https://github.com/RojoRevolution/p2_org_decider#readme",
   "dependencies": {
     "dotenv": "^8.2.0",
+    "ejs": "^3.1.6",
     "express": "^4.17.1",
     "mysql2": "^2.2.5",
     "sequelize": "^6.5.0"
