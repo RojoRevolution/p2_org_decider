@@ -1,8 +1,7 @@
-const author = require("../examples/13-Post-Author-Association/Solved/models/author");
 
 module.exports = (sequelize, DataTypes) => {
   const Org = sequelize.define('Org', {
-    name : {
+    name: {
       type: DataTypes.STRING(70),
       allowNull: false,
       validate: {
@@ -21,6 +20,6 @@ module.exports = (sequelize, DataTypes) => {
       onDelete: 'cascade'
     });
   };
-  
+
   return Org;
 };
