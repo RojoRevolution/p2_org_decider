@@ -14,10 +14,6 @@ module.exports = (sequelize, DataTypes) => {
         len: [1]
       }
     },
-    creator: {
-      type: DataTypes.INTEGER,
-      allowNull: false
-    },
     votes: {
       type: DataTypes.INTEGER,
       allowNull: false
@@ -26,6 +22,12 @@ module.exports = (sequelize, DataTypes) => {
 
   Idea.associate = (models) => {
     Idea.belongsTo(models.Poll, {
+      foreignKey: {
+        allowNull: false
+      }
+    });
+
+    Idea.belongsTo(models.User, {
       foreignKey: {
         allowNull: false
       }

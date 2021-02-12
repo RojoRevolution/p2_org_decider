@@ -14,10 +14,6 @@ module.exports = (sequelize, DataTypes) => {
         len: [1]
       }
     },
-    creator: {
-      type: DataTypes.INTEGER,
-      allowNull: false
-    },
     winner: {
       type: DataTypes.INTEGER
     }
