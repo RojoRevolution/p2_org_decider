@@ -6,12 +6,12 @@ const db = require('../models');
 // Validating login with username and password
 passport.use(new LocalStrategy(
     {
-        usernameField: 'username'
+        usernameField: 'email'
     },
     function (username, password, done) {
         db.User.findOne({
             where: {
-                username: username
+                email: email
             }
         }).then((dbUser) => {
             if (!dbUser) {
