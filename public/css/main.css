@@ -23,6 +23,15 @@ html { box-sizing: border-box;  }
     color: #545454;
   }
 
+  a {
+    color:#e5384c;
+    text-decoration: none;
+  }
+
+  a:hover {
+    color:#d22e41;
+  }
+
   main {
     min-height: 450px;
   }
