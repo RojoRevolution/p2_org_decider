@@ -4,4 +4,11 @@ html {
   }
   *, *:before, *:after {
     box-sizing: inherit;
+<<<<<<< HEAD
+=======
+  }
+
+  .viewport-height {
+    height: 100%vh
+>>>>>>> 015044d6197f4075a38718135f6bfefa61d366d7
   }

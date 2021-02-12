@@ -16,26 +16,29 @@
 
 <body>
     <form action="action_page.php" method="post">
-        <div class="imgcontainer">
-          <img src="img_avatar2.png" alt="Avatar" class="avatar">
-        </div>
-      
-        <div class="container">
-          <label for="uname"><b>Username</b></label>
+        
+      <div class="container">
+          <label for="uname" class="form-sm-2 col-form-label"><b>Username</b></label>
+          <div class="col-sm-10">
           <input type="text" placeholder="Enter Username" name="uname" required>
       
-          <label for="psw"><b>Password</b></label>
+          <br>
+
+          <label for="psw" class="form-sm-2 col-form-label"><b>Password</b></label>
+          <div class="col-sm-10">
           <input type="password" placeholder="Enter Password" name="psw" required>
       
+          <br><br>
+
+
           <button type="submit">Login</button>
-          <label>
-            <input type="checkbox" checked="checked" name="remember"> Remember me
-          </label>
-        </div>
-      
-        <div class="container" style="background-color:#f1f1f1">
           <button type="button" class="cancelbtn">Cancel</button>
-          <span class="psw">Forgot <a href="#">password?</a></span>
+          <div class="col-sm-10">
+          <label>
+
+          <div class="container" style="background-color:#f1f1f1">
+          <!-- <br>
+          <span class="psw">Forgot <a href="#">password?</a></span> -->
         </div>
       </form>
 </body>
