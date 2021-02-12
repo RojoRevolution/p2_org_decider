@@ -1,0 +1,13 @@
+@media only screen and (max-width: 768px) {
+    .empty-row {
+        display:none;
+    }
+
+    .center-row {
+        text-align:left;
+    }
+
+    .logo-home {
+        width: 150px;
+    }
+}

@@ -1,3 +1,4 @@
+
 /* Add Box-sizing for everything */
 html { box-sizing: border-box;  }
 *, *:before, *:after {
@@ -6,19 +7,119 @@ html { box-sizing: border-box;  }
   .viewport-height {
     height: 100vh
   }
+
+/* Global */
+  h1 {
+    font-family: 'Work Sans', sans-serif;
+    font-size: 2rem;
+    font-weight: 700;
+    color: #545454;
+  }
+
+  p {
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 1rem;
+    color: #545454;
+  }
+
+  main {
+    min-height: 450px;
+  }
+
+  footer {
+    margin-top: 10rem;
+  }
+
+  footer p {
+    font-size: .75rem;
+    color: #808080;
+  }
+
+  .bg-color {
+    background-color:#e5384c;
+  }
+
+  .bg-color:hover {
+    background-color:#d22e41;
+  }
+
+  .bg-color-sec {
+    background-color: #545454;
+  }
+
+  .bg-color-sec:hover {
+    background-color: #383838;
+  }
+
+  .bg-darkgrey {
+    background-color: #383838;
+  }
+  
+
 /* Helper Classes */
- .marg-pad-0 {
+
+.center-auto {
+  margin: 0 auto
+}
+
+.marg-pad-0 {
   margin: 0;
   padding: 0;
 }
+
+.pos-relative {
+  position: relative;
+}
+
+.pos-absolute {
+  position: absolute;
+}
+
+.right20 {
+  right: 20px;
+}
+
+.top20 {
+  top: 20px;
+}
+
+/* Exterior Pages */
+.background {
+  background-color: #FFF3E0;
+}
+
+.intro-margin {
+  margin: 14rem 0 0;
+}
+
+.logo-home {
+  width: 278px;
+}
+
+.form-content {
+  max-width: 400px;
+}
+
+.content-max {
+  max-width: 1024px;
+}
+
+.full-width {
+  width: 100%;
+}
+
+
+
 /* font-awesome icons */
 .icon-size {
   font-size:2rem
 }
+
 .icon-size:hover {
   color:#ececec;
   cursor: pointer;
 }
+
 /* Suggestion Cards CSS */
 .card-adjust {
   width: 18rem;
