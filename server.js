@@ -17,6 +17,7 @@ app.use(express.static(path.join(__dirname, '/public')));
 
 // Routes
 require('./routes/html-routes.js')(app);
+require('./routes/api-routes.js')(app);
 require('./routes/org-api-routes.js')(app);
 require('./routes/user-api-routes.js')(app);
 require('./routes/poll-api-routes.js')(app);
@@ -34,7 +35,7 @@ app.set('views', path.join(__dirname, '/views'));
 
 
 // Syncing database and starting server
-db.sequelize.sync({force: true}).then(() => {
+db.sequelize.sync({ force: true }).then(() => {
     app.listen(PORT, function () {
         console.log("==> 🌎  Listening on port %s. Visit http://localhost:%s/ in your browser.", PORT, PORT);
     });
