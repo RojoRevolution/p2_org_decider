@@ -11,6 +11,15 @@ module.exports = (app) => {
 
         res.render('index')
     });
+
+    app.get('/index', (req, res) => {
+        if (req.user) {
+            res.redirect('/dashboard');
+        }
+
+        res.render('index')
+    });
+
     // Sign Up Route
     app.get('/login', (req, res) => {
         if (req.user) {
