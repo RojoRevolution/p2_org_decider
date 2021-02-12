@@ -7,14 +7,43 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Log <Input:color></Input:color>
     </title>
-    <!-- Bootstrap CSS -->
-    <link href="/css/bootstrap.min.css" rel="stylesheet">
     <!-- Custom CSS -->
     <link href="/css/main.css" rel="stylesheet">
+    <link href="/css/bootstrap.min.css" rel="stylesheet">
 </head>
 
 <body>
-    <!-- Add Log In Section Here -->
+    <form action="action_page.php" method="post">
+        
+      <div class="container">
+
+        <label for="uname" class="form-sm-2 col-form-label"><b>team / organization</b></label>
+          <div class="col-sm-10">
+          <input type="text" placeholder="Team / Organiztion" name="tname" required>
+
+          <label for="uname" class="form-sm-2 col-form-label"><b>Username</b></label>
+          <div class="col-sm-10">
+          <input type="text" placeholder="Enter Username" name="uname" required>
+      
+          <br>
+
+          <label for="psw" class="form-sm-2 col-form-label"><b>Password</b></label>
+          <div class="col-sm-10">
+          <input type="password" placeholder="Enter Password" name="psw" required>
+      
+          <br><br>
+
+          <button type="submit">Login</button>
+          <button type="button" class="cancelbtn">Cancel</button>
+          <div class="col-sm-10">
+          <label>
+
+          <div class="container" style="background-color:#f1f1f1">
+          <br>
+          <span class="psw">Forgot <a href="#">password?</a></span>
+        </div>
+      </form>
 </body>
 
 </html>
+
