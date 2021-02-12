@@ -17,6 +17,8 @@ app.use(express.static(path.join(__dirname, '/public')));
 
 // Routes
 require("./routes/html-routes.js")(app);
+require('./routes/org-api-routes.js')(app);
+require('./routes/user-api-routes.js')(app);
 
 // Useing sessions to keep track of user's login status
 app.use(session({ secret: "keyboard cat", resave: true, saveUninitialized: true }));
@@ -30,7 +32,7 @@ app.set('views', path.join(__dirname, '/views'));
 
 
 // Syncing database and starting server
-db.sequelize.sync().then(() => {
+db.sequelize.sync({force: true}).then(() => {
     app.listen(PORT, function () {
         console.log("==> 🌎  Listening on port %s. Visit http://localhost:%s/ in your browser.", PORT, PORT);
     });
