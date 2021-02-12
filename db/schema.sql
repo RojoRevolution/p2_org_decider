@@ -1,1 +1,1 @@
-CREATE DATABASE p2_org_deciderDB;
+CREATE DATABASE p2_org_deciderDB

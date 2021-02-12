@@ -11,6 +11,15 @@ module.exports = (app) => {
 
         res.render('index')
     });
+
+    app.get('/index', (req, res) => {
+        if (req.user) {
+            res.redirect('/dashboard');
+        }
+
+        res.render('index')
+    });
+
     // Sign Up Route
     app.get('/login', (req, res) => {
         if (req.user) {
@@ -20,7 +29,8 @@ module.exports = (app) => {
         res.render('login')
     });
 
-    app.get('/dashboard', isAuthenticated, (req, res) => {
+    // app.get('/dashboard', isAuthenticated, (req, res) => {
+    app.get('/dashboard', (req, res) => {
         // will need to add Authentication logic here. For now, simple sending file
         // res.send('Hello')
         res.render('dash-home')
