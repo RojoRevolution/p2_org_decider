@@ -28,10 +28,21 @@ document.addEventListener("DOMContentLoaded", () => {
 
     });
 
-    // Need to set up SignUpUser Function
+    // Need to set up Login Function
     LogInUser = (orgName, email, password) => {
-
+        fetch('/api/signup', {
+            method: 'GET',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+        }).then((response) => response.json());
+            .then((data) => {
+            window.location.href = '/dash-home';
+        })
+            .catch(handleLoginErr);
     }
+
+}
 
 
 });

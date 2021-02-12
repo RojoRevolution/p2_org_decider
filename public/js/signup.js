@@ -30,7 +30,20 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Need to set up SignUpUser Function
     signUpUser = (orgName, email, password) => {
+        fetch('/api/signup', {
+            method: 'GET',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+        }).then((response) => response.json());
+            .then((data) => {
+            window.location.href = '/dash-home';
+        })
+            .catch(handleLoginErr);
+    }
 
+    signUpUser = () => {
+        console.log(err.responseJSON)
     }
 
 
