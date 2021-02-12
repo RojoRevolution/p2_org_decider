@@ -8,6 +8,11 @@
     <title>Project Name | Sign Up</title>
     <!-- Bootstrap CSS -->
     <link href="/css/bootstrap.min.css" rel="stylesheet" />
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital@0;1&family=Work+Sans:wght@700&display=swap"
+        rel="stylesheet">
     <!-- Custom CSS -->
     <link href="/css/main.css" rel="stylesheet" />
 </head>
@@ -25,37 +30,41 @@
             <header class="container-fluid">
                 <div class="container pos-relative">
                     <div class="logo pos-absolute"><img src="images/signup_logo@2x.png" class="logo-home"></div>
-                    <div class="login pos-absolute right20"><button class="btn btn-primary">Log In</button></div>
+                    <div class="login pos-absolute right20"><button class="btn text-light bg-color-sec">Log
+                            In</button>
+                    </div>
                 </div>
             </header>
             <main class="container-fluid intro-margin">
-                <div class="container center-auto">
-                    <h2 class="text-center">From Lunch to Project Ideas, create suggestions and put them up to a vote
+                <div class="container content-max center-auto">
+                    <h1 class="text-center">From Lunch to Project Ideas, create suggestions and put them up to a vote
                         for all involved.</h2>
+                        <form class="signup mt-5 center-auto form-content">
+                            <div class="form-group">
+                                <input type="email" class="form-control py-2 my-2" id="email-input"
+                                    placeholder="Enter Your Organization" />
+                            </div>
+                            <div class="form-group">
+                                <input type="email" class="form-control py-2 my-2" id="email-input"
+                                    placeholder="Enter your email" />
+                            </div>
 
-                    <form class="signup my-5 center-auto form-content">
-                        <div class="form-group">
-                            <label for="InputEmail1">Email address</label>
-                            <input type="email" class="form-control" id="email-input" placeholder="Email" />
-                        </div>
+                            <div class="form-group">
+                                <input type="email" class="form-control py-2 my-2" id="email-input" <input
+                                    type="password" class="form-control " id="password-input"
+                                    placeholder="Enter your password" />
+                            </div>
 
-                        <div class="form-group">
-                            <label for="InputPassword1">Password</label>
-                            <input type="password" class="form-control" id="password-input" placeholder="Password" />
-                        </div>
+                            <div style="display: none" id="alert" class="alert alert-danger" role="alert">
+                                <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
 
-                        <div style="display: none" id="alert" class="alert alert-danger" role="alert">
-                            <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+                                <span class="sr-only">Error:</span> <span class="msg"></span>
+                            </div>
 
-                            <span class="sr-only">Error:</span> <span class="msg"></span>
-                        </div>
+                            <button type="submit" class="btn text-light my-2 full-width bg-color">Sign Up</button>
+                        </form>
 
-                        <button type="submit" class="btn btn-default">Sign Up</button>
-                    </form>
-
-                    <br />
-
-                    <p>Or log in <a href="/login">here</a></p>
+                        <p class="text-center">Or log in <a href="/login">here</a></p>
                 </div>
             </main>
         </div>
@@ -64,6 +73,7 @@
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <!-- <script type="text/javascript" src="/partials/login.js"></script> -->
+    <%- include('partials/exterior/footer'); %>
 
 </body>
 
