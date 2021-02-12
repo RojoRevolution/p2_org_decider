@@ -6,19 +6,59 @@ html { box-sizing: border-box;  }
   .viewport-height {
     height: 100vh
   }
+
 /* Helper Classes */
- .marg-pad-0 {
+
+.center-auto {
+  margin: 0 auto
+}
+
+.marg-pad-0 {
   margin: 0;
   padding: 0;
 }
+
+.pos-relative {
+  position: relative;
+}
+
+.pos-absolute {
+  position: absolute;
+}
+
+.right20 {
+  right: 20px;
+}
+
+/* Exterior Pages */
+.background {
+  background-color: #FFF3E0;
+}
+
+.intro-margin {
+  margin: 14rem 0 0;
+}
+
+.logo-home {
+  width: 278px;
+}
+
+.form-content {
+  max-width: 400px;
+}
+
+
+
 /* font-awesome icons */
 .icon-size {
   font-size:2rem
 }
+
 .icon-size:hover {
   color:#ececec;
   cursor: pointer;
 }
+
 /* Suggestion Cards CSS */
 .card-adjust {
   width: 18rem;

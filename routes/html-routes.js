@@ -20,7 +20,8 @@ module.exports = (app) => {
         res.render('login')
     });
 
-    app.get('/dashboard', isAuthenticated, (req, res) => {
+    // app.get('/dashboard', isAuthenticated, (req, res) => {
+    app.get('/dashboard', (req, res) => {
         // will need to add Authentication logic here. For now, simple sending file
         // res.send('Hello')
         res.render('dash-home')
