@@ -19,8 +19,7 @@ module.exports = (sequelize, DataTypes) => {
       allowNull: false
     },
     winner: {
-      type: DataTypes.INTEGER,
-      allowNull: false
+      type: DataTypes.INTEGER
     }
   });
 
@@ -28,6 +27,12 @@ module.exports = (sequelize, DataTypes) => {
     // Every poll will have multiple Ideas
     Poll.hasMany(models.Idea, {
       onDelete: 'cascade'
+    });
+
+    Poll.belongsTo(models.User, {
+      foreignKey: {
+        allowNull: false
+      }
     });
   };
 

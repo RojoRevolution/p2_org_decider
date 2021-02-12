@@ -23,5 +23,14 @@ module.exports = (sequelize, DataTypes) => {
       allowNull: false
     }
   });
+
+  Idea.associate = (models) => {
+    Idea.belongsTo(models.Poll, {
+      foreignKey: {
+        allowNull: false
+      }
+    });
+  };
+
   return Idea;
 };

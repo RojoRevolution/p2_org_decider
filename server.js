@@ -16,9 +16,11 @@ app.use(express.json());
 app.use(express.static(path.join(__dirname, '/public')));
 
 // Routes
-require("./routes/html-routes.js")(app);
+require('./routes/html-routes.js')(app);
 require('./routes/org-api-routes.js')(app);
 require('./routes/user-api-routes.js')(app);
+require('./routes/poll-api-routes.js')(app);
+require('./routes/idea-api-routes.js')(app);
 
 // Useing sessions to keep track of user's login status
 app.use(session({ secret: "keyboard cat", resave: true, saveUninitialized: true }));

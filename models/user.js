@@ -30,6 +30,12 @@ module.exports = (sequelize, DataTypes) => {
     User.hasMany(models.Poll, {
       onDelete: 'cascade'
     });
+
+    User.belongsTo(models.Org, {
+      foreignKey: {
+        allowNull: false
+      }
+    });
   };
 
 
