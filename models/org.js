@@ -10,7 +10,7 @@ module.exports = (sequelize, DataTypes) => {
     },
     admin: {
       type: DataTypes.INTEGER,
-      allowNull: false
+      allowNull: true
     }
   });
 
