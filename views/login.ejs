@@ -2,48 +2,63 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Log <Input:color></Input:color>
-    </title>
-    <!-- Custom CSS -->
-    <link href="/css/main.css" rel="stylesheet">
-    <link href="/css/bootstrap.min.css" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Yay or Nay | Log In</title>
+  <!-- Bootstrap CSS -->
+  <link href="/css/bootstrap.min.css" rel="stylesheet" />
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital@0;1&family=Work+Sans:wght@700&display=swap"
+    rel="stylesheet">
+  <!-- Custom CSS -->
+  <link href="/css/main.css" rel="stylesheet" />
+  <link href="/css/mediaqueries.css" rel="stylesheet" />
 </head>
 
-<body>
-    <form action="action_page.php" method="post">
-        
-      <div class="container">
+<body class="background">
+  <!-- Header -->
+  <header class="container-fluid mt-4 pos-relative">
+    <div class="row">
+      <div class="col-4"></div>
+      <div class="col-4 text-center center-row">
+        <div class="logo"><a href="/index"><img src="images/signup_logo@2x.png" class="logo-home"></a></div>
+      </div>
+      <div class="col-4">
+      </div>
+    </div>
+    </div>
+  </header>
+  <!-- Main Content -->
+  <main class="container-fluid mt-5">
+    <div class="container content-max center-auto">
+      <h1 class="text-center">Log In To Your Account</h2>
+        <form class="signup mt-5 center-auto form-content">
+          <div class="form-group">
+            <input type="email" class="form-control py-2 my-2" id="email-input" placeholder="Enter your email" />
+          </div>
+          <div class="form-group">
+            <input class="form-control py-2 my-2" id="email-input" <input type="password" class="form-control "
+              id="password-input" placeholder="Enter your password" />
+          </div>
+          <div style="display: none" id="alert" class="alert alert-danger" role="alert">
+            <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
 
-        <label for="uname" class="form-sm-2 col-form-label"><b>team / organization</b></label>
-          <div class="col-sm-10">
-          <input type="text" placeholder="Team / Organiztion" name="tname" required>
+            <span class="sr-only">Error:</span> <span class="msg"></span>
+          </div>
 
-          <label for="uname" class="form-sm-2 col-form-label"><b>Username</b></label>
-          <div class="col-sm-10">
-          <input type="text" placeholder="Enter Username" name="uname" required>
-      
-          <br>
+          <button type="submit" class="btn text-light my-2 full-width bg-color">Log In</button>
+        </form>
 
-          <label for="psw" class="form-sm-2 col-form-label"><b>Password</b></label>
-          <div class="col-sm-10">
-          <input type="password" placeholder="Enter Password" name="psw" required>
-      
-          <br><br>
+        <p class="text-center">Need an account? Sign Up <a href="/index">here</a></p>
+    </div>
+  </main>
 
-          <button type="submit">Login</button>
-          <button type="button" class="cancelbtn">Cancel</button>
-          <div class="col-sm-10">
-          <label>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <!-- <script type="text/javascript" src="/partials/login.js"></script> -->
+  <%- include('partials/exterior/footer'); %>
 
-          <div class="container" style="background-color:#f1f1f1">
-          <br>
-          <span class="psw">Forgot <a href="#">password?</a></span>
-        </div>
-      </form>
 </body>
 
 </html>
-
