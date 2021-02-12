@@ -1,22 +1,22 @@
 module.exports = (sequelize, DataTypes) => {
   const User = sequelize.define('User', {
-    id : {
-      type: DataTypes.UUID,
-      defaultValue: Sequelize.UUIDV4,
-      autoIncrement: true,
-      allowNull: false,
-      primaryKey: true
-    },
-    username : {
+    username: {
       type: DataTypes.STRING(70),
-      allowNull = false,
+      allowNull: false,
       validate: {
         len: [1]
       }
     },
     email: {
       type: DataTypes.STRING(70),
-      allowNull = false,
+      allowNull: false,
+      validate: {
+        len: [1]
+      }
+    },
+    password: {
+      type: DataTypes.STRING(15),
+      allowNull: false,
       validate: {
         len: [1]
       }
@@ -29,6 +29,17 @@ module.exports = (sequelize, DataTypes) => {
       onDelete: 'cascade'
     });
   };
-  
+
+
+  // Checks to make sure unhashed password matches the hashed password in database
+  User.prototype.validPassword = function (password) {
+    return bcrypt.compareSync(password, this.password);
+  };
+
+  // This hook automatically hashes the password before the User is created
+  User.addHook("beforeCreate", function (user) {
+    user.password = bcrypt.hashSync(user.password, bcrypt.genSaltSync(10), null);
+  });
+
   return User;
 };

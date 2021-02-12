@@ -1,14 +1,26 @@
 /* Add Box-sizing for everything */
-html {
-    box-sizing: border-box;
-  }
-  *, *:before, *:after {
+html { box-sizing: border-box;  }
+*, *:before, *:after {
     box-sizing: inherit;
-<<<<<<< HEAD
-=======
-  }
-
+}
   .viewport-height {
-    height: 100%vh
->>>>>>> 015044d6197f4075a38718135f6bfefa61d366d7
+    height: 100vh
   }
+/* Helper Classes */
+ .marg-pad-0 {
+  margin: 0;
+  padding: 0;
+}
+/* font-awesome icons */
+.icon-size {
+  font-size:2rem
+}
+.icon-size:hover {
+  color:#ececec;
+  cursor: pointer;
+}
+/* Suggestion Cards CSS */
+.card-adjust {
+  width: 18rem;
+  display: inline-block;
+}
