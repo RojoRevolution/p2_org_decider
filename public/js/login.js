@@ -1,35 +1,35 @@
 // variables for DOM elements
-const signUpform = document.getElementById('signUpForm')
-const orgInputValue = document.getElementById('org-input')
+const logInForm = document.getElementById('loginForm')
 const emailInputValue = document.getElementById('email-input')
 const passInputValue = document.getElementById('pass-input')
 
 document.addEventListener("DOMContentLoaded", () => {
     // Event listener for sign up form
-    signUpform.addEventListener('submit', (event) => {
+
+    logInForm.addEventListener('submit', (event) => {
         event.preventDefault();
-        // Save user Data to a variable
+        // save user data to a variable
         let userData = {
-            org: orgInputValue.value.trim(),
             email: emailInputValue.value.trim(),
             password: passInputValue.value.trim(),
         };
+
         console.log(userData);
+
         // If input fields are empty return out of function 
-        if (!userData.org || !userData.email || !userData.password) {
+        if (!userData.email || !userData.password) {
             return;
         }
-        // Pass user data to the Sign Up Function
-        signUpUser(userData.org, userData.email, userData.password);
+        // Pass user data to the Log In Function
+        LogInUser(userData.org, userData.email, userData.password);
         // empty the input fields
-        orgInputValue.value = "";
         emailInputValue.value = "";
         passInputValue.value = "";
 
     });
 
     // Need to set up SignUpUser Function
-    signUpUser = (orgName, email, password) => {
+    LogInUser = (orgName, email, password) => {
 
     }
 
