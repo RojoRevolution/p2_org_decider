@@ -22,6 +22,10 @@ html { box-sizing: border-box;  }
     color: #545454;
   }
 
+  main {
+    min-height: 450px;
+  }
+
   footer {
     margin-top: 10rem;
   }
@@ -73,6 +77,10 @@ html { box-sizing: border-box;  }
 
 .right20 {
   right: 20px;
+}
+
+.top20 {
+  top: 20px;
 }
 
 /* Exterior Pages */
