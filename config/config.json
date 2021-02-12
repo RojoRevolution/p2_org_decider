@@ -1,7 +1,7 @@
 {
     "development": {
         "username": "root",
-        "password": "squalus",
+        "password": "",
         "database": "p2_org_deciderDB",
         "host": "127.0.0.1",
         "dialect": "mysql"
