@@ -13,6 +13,16 @@ module.exports = (app) => {
     app.post("/api/signup", (req, res) => {
         console.log('//// API SIGNUP ////');
         console.log(req.body);
+        let org;
+        db.Org.findAll().then((dbOrg) => {
+            console.log('SIGNUP: dbOrg', dbOrg);
+            res.status(200);
+            org = dbOrg;
+        })
+        .catch((err) => {
+            console.log(err);
+            return res.status(404).json(err);
+        });
         db.User.create({
             email: req.body.email,
             password: req.body.password,
