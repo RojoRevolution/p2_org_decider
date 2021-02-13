@@ -1,4 +1,5 @@
 # seeding orgs and users via signup flow
+
   curl --request POST \
   --url http://localhost:8080/api/signup \
   --header 'Content-Type: application/json' \
@@ -19,54 +20,20 @@
   --header 'Content-Type: application/json' \
   --data '{"org":"cool local startup","email":"richard@mail.com","password":"password"}'
 
-# seeding orgs
+  curl --request POST \
+  --url http://localhost:8080/api/signup \
+  --header 'Content-Type: application/json' \
+  --data '{"org":"g-squad","email":"t-bone@mail.com","password":"password"}'
 
   curl --request POST \
-  --url http://localhost:8080/api/orgs \
+  --url http://localhost:8080/api/signup \
   --header 'Content-Type: application/json' \
-  --data '{"name":"cool local startup","admin": null}'
+  --data '{"org":"g-squad","email":"g-dawg@mail.com","password":"password"}'
 
   curl --request POST \
-  --url http://localhost:8080/api/orgs \
+  --url http://localhost:8080/api/signup \
   --header 'Content-Type: application/json' \
-  --data '{"name":"g-squad","admin": null}'
-
-  # seeding users
-
-  curl --request POST \
-  --url http://localhost:8080/api/users \
-  --header 'Content-Type: application/json' \
-  --data '{"username":"stephen","email":"stephen@mail.com","password":"password","OrgId":1}'
-
-  curl --request POST \
-  --url http://localhost:8080/api/users \
-  --header 'Content-Type: application/json' \
-  --data '{"username":"david","email":"david@mail.com","password":"password","OrgId":1}'
-
-  curl --request POST \
-  --url http://localhost:8080/api/users \
-  --header 'Content-Type: application/json' \
-  --data '{"username":"trevor","email":"trevor@mail.com","password":"password","OrgId":1}'
-
-  curl --request POST \
-  --url http://localhost:8080/api/users \
-  --header 'Content-Type: application/json' \
-  --data '{"username":"richard","email":"richard@mail.com","password":"password","OrgId":1}'
-
-  curl --request POST \
-  --url http://localhost:8080/api/users \
-  --header 'Content-Type: application/json' \
-  --data '{"username":"t-bone","email":"tbone@mail.com","password":"password","OrgId":2}'
-
-  curl --request POST \
-  --url http://localhost:8080/api/users \
-  --header 'Content-Type: application/json' \
-  --data '{"username":"g-dawg","email":"gdawg@mail.com","password":"password","OrgId":2}'
-
-  curl --request POST \
-  --url http://localhost:8080/api/users \
-  --header 'Content-Type: application/json' \
-  --data '{"username":"tiny","email":"tiny@mail.com","password":"password","OrgId":2}'
+  --data '{"org":"g-squad","email":"tiny@mail.com","password":"password"}'
 
   # seeding polls
 
