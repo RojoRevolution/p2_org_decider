@@ -2,7 +2,8 @@ const db = require('../models');
 
 module.exports = (app) => {
   app.get('/api/polls/', (req, res) => {
-    db.Poll.findAll().then((dbPoll) => {
+    db.Poll.findAll()
+    .then((dbPoll) => {
       if (dbPoll.length > 0) {
         res.status(200).json(dbPoll);
       } 
@@ -18,7 +19,8 @@ module.exports = (app) => {
   });
 
   app.post('/api/polls/', (req, res) => {
-    db.Poll.create(req.body).then((dbPoll) => {
+    db.Poll.create(req.body)
+    .then((dbPoll) => {
       res.status(201).json(dbPoll)
     })
     .catch((err) => {

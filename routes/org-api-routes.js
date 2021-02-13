@@ -2,7 +2,8 @@ const db = require('../models');
 
 module.exports = (app) => {
   app.get('/api/orgs/', (req, res) => {
-    db.Org.findAll().then((dbOrg) => {
+    db.Org.findAll()
+    .then((dbOrg) => {
       if (dbOrg.length > 0) {
         res.status(200).json(dbOrg);
       }
@@ -17,7 +18,8 @@ module.exports = (app) => {
   });
 
   app.post('/api/orgs/', (req, res) => {
-    db.Org.create(req.body).then((dbOrg) => {
+    db.Org.create(req.body)
+    .then((dbOrg) => {
       res.status(201).json(dbOrg);
     })
     .catch((err) => {

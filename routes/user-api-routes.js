@@ -2,7 +2,8 @@ const db = require('../models');
 
 module.exports = (app) => {
   app.get('/api/users/', (req, res) => {
-    db.User.findAll().then((dbUser) => {
+    db.User.findAll()
+    .then((dbUser) => {
       if (dbUser.length > 0) {
         res.status(200).json(dbUser);
       }

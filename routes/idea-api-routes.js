@@ -2,7 +2,8 @@ const db = require('../models');
 
 module.exports = (app) => {
   app.get('/api/ideas/', (req, res) => {
-    db.Idea.findAll().then((dbIdea) => {
+    db.Idea.findAll()
+    .then((dbIdea) => {
       if (dbIdea.length > 0) {
         res.status(200).json(dbIdea);
       }
@@ -17,7 +18,8 @@ module.exports = (app) => {
   });
 
   app.post('/api/ideas/', (req, res) => {
-    db.Idea.create(req.body).then((dbIdea) => {
+    db.Idea.create(req.body)
+    .then((dbIdea) => {
       res.status(201).json(dbIdea);
     })
     .catch((err) => {
