@@ -10,8 +10,8 @@ module.exports = (app) => {
     });
 
     app.post("/api/signup", (req, res) => {
-        console.log(db.User);
-        console.log(db.Org);
+        // console.log(db.User);
+        // console.log(db.Org);
         db.User.create({
             email: req.body.email,
             password: req.body.password,
