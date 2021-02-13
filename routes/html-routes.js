@@ -8,14 +8,14 @@ module.exports = (app) => {
         if (req.user) {
             res.redirect('/dashboard');
         }
-        res.render('index')
+        res.render('index');
     });
 
     app.get('/index', (req, res) => {
         if (req.user) {
             res.redirect('/dashboard');
         }
-        res.render('index')
+        res.render('index');
     });
 
     // Sign Up Route
@@ -23,12 +23,12 @@ module.exports = (app) => {
         if (req.user) {
             res.redirect('/dashboard');
         }
-        res.render("login")
+        res.render("login");
     });
 
-    app.get("/dashboard", isAuthenticated, function (req, res) {
-        console.log('//// HTML ROUTE ////')
-        console.log(req.user)
-        res.render("dash-home")
+    app.get("/dashboard", isAuthenticated, (req, res) => {
+        console.log('//// HTML ROUTE ////');
+        console.log(req.user);
+        res.render("dash-home");
     });
 }
