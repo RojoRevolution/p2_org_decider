@@ -29,7 +29,7 @@ module.exports = (app) => {
                 signUser(dbOrg, req.body, res);
             }
             else {
-                // If not matching Orgs are found, create one
+                // If no matching Orgs are found, create one
                 console.log('404 Org:', req.body.org, 'Not Found');
                 res.status(404);
                 db.Org.create({ name: req.body.org })
@@ -41,7 +41,30 @@ module.exports = (app) => {
                     })
                     .then((newOrg) => {
                         // creates the new User after a new Org was created
-                        signUser(newOrg, req.body, res);
+                        signUser(newOrg, req.body, res).then(() => {
+                            setTimeout(() => {
+                                db.User.findAll({
+                                    where: {
+                                        email: req.body.email
+                                    }
+                                }) 
+                                .then((dbUser) => {
+                                    for (let i = 0; newOrg.length > i; i++) {
+                                        if (newOrg[i].name === req.body.org) {
+                                            console.log('User set to admin', dbUser);
+                                            db.Org.update({
+                                                admin: dbUser[0].id
+                                            },
+                                            {
+                                                where: {
+                                                    id: newOrg[i].id
+                                                }
+                                            });
+                                        }
+                                    }
+                                });
+                            }, 2000);
+                        });
                     });
                 });
             }
@@ -59,7 +82,7 @@ module.exports = (app) => {
     });
 };
 
-const signUser = (dbOrg, body, res) => {
+const signUser = async (dbOrg, body, res) => {
     // If the Org name matches then create a User
     for (let i = 0; dbOrg.length > i; i++) {
         if (dbOrg[i].name === body.org) {
@@ -67,18 +90,15 @@ const signUser = (dbOrg, body, res) => {
                 email: body.email,
                 password: body.password,
                 OrgId: dbOrg[i].id
-            })
-            .then(() => {
+            }).catch((err) => {
+                console.log(err);
+                res.status(401).json(err);
+            }).then(() => {
                 console.log('====================');
                 console.log('REDIRECTING TO LOGIN');
                 console.log('====================');
                 res.redirect(307, "/api/login");
-            })
-            .catch((err) => {
-                console.log(err);
-                res.status(401).json(err);
             });
-            return;
         }
     }
 };
