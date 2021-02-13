@@ -46,9 +46,6 @@ document.addEventListener("DOMContentLoaded", () => {
             headers: {
                 'Content-Type': 'application/json',
             },
-            // name: orgName,
-            email: email,
-            password: password,
         })
             .then((response) => response.json())
             .then(json => console.log(json))

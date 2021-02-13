@@ -15,6 +15,9 @@ module.exports = (app) => {
             email: req.body.email,
             password: req.body.password,
         })
+        db.Org.create({
+            name: req.body.org
+        })
             .then(function () {
                 res.redirect(307, "/api/login");
             })
