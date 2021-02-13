@@ -44,6 +44,11 @@ html { box-sizing: border-box;  }
     font-size: .75rem;
     color: #808080;
   }
+  header {
+    width: 1206px;
+    height: 115px;
+    background-color: #f7eede;
+  }
 
   .bg-color {
     background-color:#e5384c;
@@ -63,6 +68,10 @@ html { box-sizing: border-box;  }
 
   .bg-darkgrey {
     background-color: #383838;
+  }
+
+  .bg-color-box {
+    background-color: #ffffff
   }
   
 
