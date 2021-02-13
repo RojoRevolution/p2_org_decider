@@ -42,6 +42,7 @@ module.exports = (app) => {
                     .then((newOrg) => {
                         // creates the new User after a new Org was created
                         signUser(newOrg, req.body, res).then(() => {
+                            // Updates the new Org to have the creating User as 'admin'
                             setTimeout(() => {
                                 db.User.findAll({
                                     where: {
