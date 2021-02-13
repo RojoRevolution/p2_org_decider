@@ -28,6 +28,7 @@ module.exports = (app) => {
             else {
                 console.log('404 Org:', req.body.org, 'Not Found');
                 res.status(404);
+                db.Org.create({ name: req.body.org });
             }
         })
         .catch((err) => {
@@ -37,9 +38,6 @@ module.exports = (app) => {
         db.User.create({
             email: req.body.email,
             password: req.body.password,
-        });
-        db.Org.create({
-            name: req.body.org
         })
         .then(() => {
             console.log('====================');
