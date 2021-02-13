@@ -1,6 +1,7 @@
 // Requiring npm packages
 const express = require('express');
 const path = require('path');
+// Session require needed to be express-session' LOL
 const session = require('express-session');
 const passport = require('./config/passport');
 

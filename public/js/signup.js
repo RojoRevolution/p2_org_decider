@@ -21,8 +21,6 @@ document.addEventListener("DOMContentLoaded", () => {
         }
         // Pass user data to the Sign Up Function
         signUpUser(userData.org, userData.email, userData.password);
-
-
         // empty the input fields
         orgInputValue.value = "";
         emailInputValue.value = "";
@@ -47,9 +45,7 @@ document.addEventListener("DOMContentLoaded", () => {
             .then((response) => {
                 response.json()
             })
-            // .then(json => console.log(json))
             .then((data) => {
-                // window.location.href = '/dashboard';
                 window.location.replace("/dashboard");
             })
             .catch(handleLoginErr);
