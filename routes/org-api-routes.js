@@ -25,5 +25,4 @@ module.exports = (app) => {
       res.status(400).json(err);
     });
   });
-
 };
