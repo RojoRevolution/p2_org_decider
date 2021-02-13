@@ -24,11 +24,11 @@ module.exports = (app) => {
             res.redirect('/dashboard');
         }
         res.render("login")
-        // res.render('login')
     });
 
     app.get("/dashboard", isAuthenticated, function (req, res) {
-        // res.sendFile(path.join(__dirname, "../public/members.html"));
-        res.render("/dash-home.html")
+        console.log('//// HTML ROUTE ////')
+        console.log(req.user)
+        res.render("dash-home")
     });
 }

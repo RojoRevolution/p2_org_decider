@@ -1,7 +1,7 @@
 // Requiring npm packages
 const express = require('express');
 const path = require('path');
-const session = require('express');
+const session = require('express-session');
 const passport = require('./config/passport');
 
 // Setting up port and requiring models for syncing

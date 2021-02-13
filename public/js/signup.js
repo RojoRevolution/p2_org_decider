@@ -32,8 +32,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Need to set up SignUpUser Function
     signUpUser = (orgName, email, password) => {
-
         fetch('/api/signup', {
+            credentials: 'include',
             method: 'POST',
             body: JSON.stringify({
                 org: `${orgName}`,

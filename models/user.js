@@ -10,18 +10,21 @@ module.exports = function (sequelize, DataTypes) {
     //   }
     // },
     email: {
-      type: DataTypes.STRING(70),
+      type: DataTypes.STRING,
       allowNull: false,
+      // validate: {
+      //   len: [1]
+      // }
       validate: {
-        len: [1]
+        isEmail: true
       }
     },
     password: {
-      type: DataTypes.STRING(),
+      type: DataTypes.STRING,
       allowNull: false,
-      validate: {
-        len: [1]
-      }
+      // validate: {
+      //   len: [1]
+      // }
     }
   });
 
