@@ -15,9 +15,4 @@ module.exports = (app) => {
       res.status(500).json(err);
     });
   });
-
-  app.post('/api/users/', (req, res) => {
-    console.log(req.body);
-    db.User.create(req.body).then((dbUser) => res.json(dbUser));
-  });
 };
