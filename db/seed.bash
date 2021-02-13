@@ -1,3 +1,24 @@
+# seeding orgs and users via signup flow
+  curl --request POST \
+  --url http://localhost:8080/api/signup \
+  --header 'Content-Type: application/json' \
+  --data '{"org":"cool local startup","email":"stephen@mail.com","password":"password"}'
+
+  curl --request POST \
+  --url http://localhost:8080/api/signup \
+  --header 'Content-Type: application/json' \
+  --data '{"org":"cool local startup","email":"david@mail.com","password":"password"}'
+
+  curl --request POST \
+  --url http://localhost:8080/api/signup \
+  --header 'Content-Type: application/json' \
+  --data '{"org":"cool local startup","email":"trevor@mail.com","password":"password"}'
+
+  curl --request POST \
+  --url http://localhost:8080/api/signup \
+  --header 'Content-Type: application/json' \
+  --data '{"org":"cool local startup","email":"richard@mail.com","password":"password"}'
+
 # seeding orgs
 
   curl --request POST \
