@@ -36,6 +36,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
         fetch('/api/signup', {
             method: 'POST',
+            body: JSON.stringify({
+                org: `${orgName}`,
+                email: `${email}`,
+                password: `${password}`
+            }),
             headers: {
                 'Content-Type': 'application/json',
             },
@@ -44,14 +49,15 @@ document.addEventListener("DOMContentLoaded", () => {
             password: password,
         })
             .then((response) => response.json())
+            .then(json => console.log(json))
             .then((data) => {
-                // window.location.href = '/dash-home';
+                window.location.href = '/dash-home';
             })
             .catch(handleLoginErr);
     }
 
-    handleLoginErr = () => {
-        console.log('error')
+    handleLoginErr = (err) => {
+        console.log(err)
     }
 
 });

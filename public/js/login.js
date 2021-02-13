@@ -21,7 +21,7 @@ document.addEventListener("DOMContentLoaded", () => {
             return;
         }
         // Pass user data to the Log In Function
-        LogInUser(userData.org, userData.email, userData.password);
+        LogInUser(userData.email, userData.password);
         // empty the input fields
         emailInputValue.value = "";
         passInputValue.value = "";
@@ -29,20 +29,22 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     // Need to set up Login Function
-    LogInUser = (orgName, email, password) => {
-        fetch('/api/signup', {
+    LogInUser = (email, password) => {
+        fetch('/api/login', {
             method: 'GET',
             headers: {
                 'Content-Type': 'application/json',
             },
-        }).then((response) => response.json());
-            .then((data) => {
-            window.location.href = '/dash-home';
         })
-            .catch(handleLoginErr);
+            .then((response) => response.json())
+            .then((data) => {
+                window.location.replace("/dashboard")
+            })
+            .catch(function (err) {
+                console.log(err);
+            });
     }
 
-}
-
-
 });
+
+
