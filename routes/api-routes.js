@@ -3,15 +3,16 @@ var passport = require("../config/passport");
 
 
 module.exports = (app) => {
-
+    // Post routes for logging in
     app.post("/api/login", passport.authenticate("local"), function (req, res) {
+        console.log('///// API/LOGIN ////');
         console.log(req.user)
         res.json(req.user);
     });
-
+    // Post routes for signing up
     app.post("/api/signup", (req, res) => {
-        console.log(db.User);
-        console.log(db.Org);
+        console.log('//// API ROUTE ////')
+        console.log(req.body)
         db.User.create({
             email: req.body.email,
             password: req.body.password,
@@ -30,6 +31,7 @@ module.exports = (app) => {
             });
     });
 
+    // Post route for logging out
     app.get("/logout", function (req, res) {
         req.logout();
         res.redirect("/");

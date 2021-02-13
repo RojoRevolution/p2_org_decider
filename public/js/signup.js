@@ -21,8 +21,6 @@ document.addEventListener("DOMContentLoaded", () => {
         }
         // Pass user data to the Sign Up Function
         signUpUser(userData.org, userData.email, userData.password);
-
-
         // empty the input fields
         orgInputValue.value = "";
         emailInputValue.value = "";
@@ -32,11 +30,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Need to set up SignUpUser Function
     signUpUser = (orgName, email, password) => {
-        console.log({ orgName });
-        console.log({ email });
-        console.log({ password });
-
         fetch('/api/signup', {
+            credentials: 'include',
             method: 'POST',
             body: JSON.stringify({
                 org: `${orgName}`,
@@ -47,10 +42,10 @@ document.addEventListener("DOMContentLoaded", () => {
                 'Content-Type': 'application/json',
             },
         })
-            .then((response) => response.json())
-            // .then(json => console.log(json))
+            .then((response) => {
+                response.json()
+            })
             .then((data) => {
-                // window.location.href = '/dashboard';
                 window.location.replace("/dashboard");
             })
             .catch(handleLoginErr);

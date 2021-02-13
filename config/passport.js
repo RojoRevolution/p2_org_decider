@@ -14,6 +14,8 @@ passport.use(new LocalStrategy(
                 email: email
             }
         }).then((dbUser) => {
+            console.log('//// IN PASSPORT /////')
+            console.log(dbUser)
             if (!dbUser) {
                 return done(null, false, {
                     message: 'Incorrect username.'
