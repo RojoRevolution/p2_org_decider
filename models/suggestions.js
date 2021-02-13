@@ -18,9 +18,9 @@ module.exports = (sequelize, DataTypes) => {
 
     Suggestions.associate = (models) => {
 
-        // Suggestions.hasMany(models.Votes, {
-        //     onDelete: 'cascade'
-        // });
+        Suggestions.hasMany(models.Votes, {
+            onDelete: 'cascade'
+        });
 
         Suggestions.belongsTo(models.User, {
             foreignKey: {
