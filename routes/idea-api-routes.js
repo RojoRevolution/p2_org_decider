@@ -17,6 +17,12 @@ module.exports = (app) => {
   });
 
   app.post('/api/ideas/', (req, res) => {
-    db.Idea.create(req.body).then((dbIdea) => res.json(dbIdea));
+    db.Idea.create(req.body).then((dbIdea) => {
+      res.status(201).json(dbIdea);
+    })
+    .catch((err) => {
+      console.log(err);
+      res.status(400).json(err);
+    });
   });
 };
