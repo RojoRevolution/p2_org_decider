@@ -14,14 +14,25 @@ module.exports = (app) => {
         console.log('//// API SIGNUP ////');
         console.log(req.body);
         let org;
-        db.Org.findAll().then((dbOrg) => {
+        db.Org.findAll({
+            where: {
+                name: req.body.org
+            }
+        }).then((dbOrg) => {
             console.log('SIGNUP: dbOrg', dbOrg);
-            res.status(200);
-            org = dbOrg;
+            if (dbOrg.length > 0) {
+                console.log('200 Org:', req.body.org, 'Found');
+                res.status(200);
+                org = dbOrg;
+            }
+            else {
+                console.log('404 Org:', req.body.org, 'Not Found');
+                res.status(404);
+            }
         })
         .catch((err) => {
             console.log(err);
-            return res.status(404).json(err);
+            return res.status(500).json(err);
         });
         db.User.create({
             email: req.body.email,
