@@ -21,7 +21,7 @@ passport.use(new LocalStrategy(
             }
             else if (!dbUser.validPassword(password)) {
                 return done(null, false, {
-                    massage: 'Incorrect password.'
+                    message: 'Incorrect password.'
                 });
             }
             return done(null, dbUser);

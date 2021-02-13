@@ -48,14 +48,16 @@ document.addEventListener("DOMContentLoaded", () => {
             },
         })
             .then((response) => response.json())
-            .then(json => console.log(json))
+            // .then(json => console.log(json))
             .then((data) => {
-                window.location.href = '/dash-home';
+                // window.location.href = '/dashboard';
+                window.location.replace("/dashboard");
             })
             .catch(handleLoginErr);
     }
 
     handleLoginErr = (err) => {
+        alert(text(responseJSON))
         console.log(err)
     }
 
