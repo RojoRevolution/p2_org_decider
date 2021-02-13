@@ -32,9 +32,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Need to set up SignUpUser Function
     signUpUser = (orgName, email, password) => {
-        console.log({ orgName });
-        console.log({ email });
-        console.log({ password });
 
         fetch('/api/signup', {
             method: 'POST',
@@ -47,7 +44,9 @@ document.addEventListener("DOMContentLoaded", () => {
                 'Content-Type': 'application/json',
             },
         })
-            .then((response) => response.json())
+            .then((response) => {
+                response.json()
+            })
             // .then(json => console.log(json))
             .then((data) => {
                 // window.location.href = '/dashboard';

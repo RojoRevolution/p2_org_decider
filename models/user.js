@@ -1,6 +1,6 @@
 const bcrypt = require('bcryptjs');
 
-module.exports = (sequelize, DataTypes) => {
+module.exports = function (sequelize, DataTypes) {
   const User = sequelize.define('User', {
     // username: {
     //   type: DataTypes.STRING(70),
@@ -25,7 +25,7 @@ module.exports = (sequelize, DataTypes) => {
     }
   });
 
-  User.associate = (models) => {
+  User.associate = function (models) {
     // Each User will participate on multiple polls
     User.hasMany(models.Poll, {
       onDelete: 'cascade'
