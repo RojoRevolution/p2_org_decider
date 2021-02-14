@@ -2,27 +2,34 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Yay or Nay | Log In</title>
-  <!-- Bootstrap CSS -->
-  <link href="/css/bootstrap.min.css" rel="stylesheet" />
-  <!-- Google Fonts -->
-  <link rel="preconnect" href="https://fonts.gstatic.com">
-  <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital@0;1&family=Work+Sans:wght@700&display=swap"
-    rel="stylesheet">
-  <!-- Custom CSS -->
-  <link href="/css/main.css" rel="stylesheet" />
-  <link href="/css/mediaqueries.css" rel="stylesheet" />
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Yay or Nay | Log In</title>
+    <!-- Bootstrap CSS -->
+    <link href="/css/bootstrap.min.css" rel="stylesheet" />
+    <!-- Font Awesome -->
+    <script src="https://kit.fontawesome.com/3e62fcbb3c.js" crossorigin="anonymous"></script>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital@0;1&family=Work+Sans:wght@700&display=swap"
+        rel="stylesheet">
+    <!-- Custom CSS -->
+    <link href="/css/main.css" rel="stylesheet" />
+    <link href="/css/mediaqueries.css" rel="stylesheet" />
 </head>
 
-<body class="background">
+<body>
     <div class="container-fluid">
         <div class="row">
-            <div class="col-2 bg-color py-2 viewport-height">
-                <img src="/images/dashboard/yaynay_logo.png" alt="yay or nay logo">
-                <div class="container p-2 text-light">Organization Name</div>
+            <div class="col-2 py sidebar">
+                <div class="my-3 text-center">
+                    <img src="/images/dashboard/yaynay_logo.png" alt="yay or nay logo">
+                </div>
+                <div class="my-4 text-center">
+                    <i class="fas fa-plus-circle add-icon"></i>
+                </div>
                 <div class="mt-3">
                     <%- include('partials/dash/sidebar-nav'); %>
                 </div>
@@ -35,17 +42,16 @@
                             <div class="  dflex d-flex justify-content-between">
                                 <div>
                                     <h4>How do you get started?</h4>
-                                   <ul>
-                                    <li> Create </li> 
-                                    <li> Launch </li> 
-                                    <li> Results </li> 
-                                   </ul>
+                                    <ul>
+                                        <li> Create </li>
+                                        <li> Launch </li>
+                                        <li> Results </li>
+                                    </ul>
                                 </div>
                             </div>
                         </div>
                     </section>
             </div>
-        </div> 
-    </div>   
+        </div>
+    </div>
 </body>
-
