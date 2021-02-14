@@ -1,63 +1,43 @@
-<!DOCTYPE html>
-<html lang="en">
+<%- include('partials/dash/head'); %>
 
-<head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Yay or Nay | Log In</title>
-    <!-- Bootstrap CSS -->
-    <link href="/css/bootstrap.min.css" rel="stylesheet" />
-    <!-- Font Awesome -->
-    <script src="https://kit.fontawesome.com/3e62fcbb3c.js" crossorigin="anonymous"></script>
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link
-        href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital@0;1&family=Work+Sans:wght@700&display=swap"
-        rel="stylesheet">
-    <!-- Custom CSS -->
-    <link href="/css/main.css" rel="stylesheet" />
-    <link href="/css/mediaqueries.css" rel="stylesheet" />
-</head>
+    <body>
+        <!-- MODAL PARTIAL -->
+        <%- include('partials/dash/addNew-modal'); %>
+            <!-- END MODAL PARTIAL -->
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-2 py sidebar">
+                        <div class="my-3 text-center">
+                            <img src="/images/dashboard/yaynay_logo.png" alt="yay or nay logo">
+                        </div>
+                        <div class="my-4 text-center">
+                            <button type="button" class="addBtn" data-bs-toggle="modal" data-bs-target="#addNew"><i
+                                    class="fas fa-plus-circle add-icon"></i></button>
+                        </div>
+                        <div class="mt-3">
+                            <%- include('partials/dash/sidebar-nav'); %>
+                        </div>
+                    </div>
+                    <div class="col-10 marg-pad-0 ">
+                        <%- include('partials/dash/header'); %>
 
-<body>
-    <!-- MODAL PARTIAL -->
-    <%- include('partials/dash/addNew-modal'); %>
-        <!-- END MODAL PARTIAL -->
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-2 py sidebar">
-                    <div class="my-3 text-center">
-                        <img src="/images/dashboard/yaynay_logo.png" alt="yay or nay logo">
-                    </div>
-                    <div class="my-4 text-center">
-                        <button type="button" class="addBtn" data-bs-toggle="modal" data-bs-target="#addNew"><i
-                                class="fas fa-plus-circle add-icon"></i></button>
-                    </div>
-                    <div class="mt-3">
-                        <%- include('partials/dash/sidebar-nav'); %>
-                    </div>
-                </div>
-                <div class="col-10 marg-pad-0 ">
-                    <%- include('partials/dash/header'); %>
-
-                        <section class="container-fluid my-4">
-                            <div class="bg-color-box p-4 border rounded">
-                                <div class="  dflex d-flex justify-content-between">
-                                    <div>
-                                        <h4>How do you get started?</h4>
-                                        <ul>
-                                            <li> Create </li>
-                                            <li> Launch </li>
-                                            <li> Results </li>
-                                        </ul>
+                            <section class="container-fluid my-4">
+                                <div class="bg-color-box p-4 border rounded">
+                                    <div class="  dflex d-flex justify-content-between">
+                                        <div>
+                                            <h4>How do you get started?</h4>
+                                            <ul>
+                                                <li> Create </li>
+                                                <li> Launch </li>
+                                                <li> Results </li>
+                                            </ul>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                        </section>
+                            </section>
+                    </div>
                 </div>
             </div>
-        </div>
-        <!-- Bootstrap Required JS and jQuery Scripts -->
-        <%- include('partials/dash/all_scripts'); %>
-</body>
+            <!-- Bootstrap Required JS and jQuery Scripts -->
+            <%- include('partials/dash/all_scripts'); %>
+    </body>
