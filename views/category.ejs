@@ -1,0 +1,59 @@
+<%- include('partials/dash/head'); %>
+
+    <body>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-2 bg-primary py-2 viewport-height">
+                    <div class="container p-2 text-light">Organization Name</div>
+                    <div class="mt-3">
+                        <%- include('partials/dash/sidebar-nav'); %>
+                    </div>
+                </div>
+                <div class="col-10 marg-pad-0 ">
+                    <%- include('partials/dash/header'); %>
+                        <section class="container-fluid my-4">
+                            <div class="p-4 border rounded">
+                                <div class="dflex d-flex justify-content-between">
+                                    <div>
+                                        <h4>Data Visualization Goes Here</h4>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </section>
+                        <div class="container-fluid my-4">
+                            <div class="p-4 border rounded">
+                                <div class="dflex d-flex justify-content-between">
+                                    <div>
+                                        <h4>Up For Vote</h4>
+                                    </div>
+                                </div>
+                                <div class="my-3">
+                                    <%- include('partials/dash/vote-cards'); %>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Suggestion Ideas Will be Populated Here -->
+                        <div class="container-fluid my-4">
+                            <div class="p-4 border rounded">
+                                <div class="dflex d-flex justify-content-between">
+                                    <div>
+                                        <h4>Add Suggestions</h4>
+                                    </div>
+                                    <div>
+                                        <btn class="btn btn-secondary btn-sm">Add New Suggestion</btn>
+                                    </div>
+                                </div>
+                                <div class="my-3">
+                                    <%- include('partials/dash/suggestion-cards'); %>
+                                </div>
+                            </div>
+                        </div>
+                </div>
+            </div>
+        </div>
+        <!-- Bootstrap Required JS and jQuery Scripts -->
+        <%- include('partials/dash/all_scripts'); %>
+    </body>
+
+    </html>
