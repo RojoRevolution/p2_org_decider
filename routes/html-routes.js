@@ -25,10 +25,15 @@ module.exports = (app) => {
         }
         res.render("login");
     });
-
+    // Main Dashboard Page
     app.get("/dashboard", isAuthenticated, (req, res) => {
         console.log('//// HTML ROUTE ////');
         console.log(req.user);
         res.render("dash-home");
+    });
+
+    // Dashboard Category Pages
+    app.get("/category", isAuthenticated, (req, res) => {
+        res.render("category");
     });
 }
