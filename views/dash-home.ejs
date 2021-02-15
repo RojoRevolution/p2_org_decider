@@ -11,32 +11,44 @@
                             <img src="/images/dashboard/yaynay_logo.png" alt="yay or nay logo">
                         </div>
                         <div class="my-4 text-center">
-                            <button type="button" id="addBtn" class="addBtn" data-bs-toggle="modal"
-                                data-bs-target="#addNew"><i class="fas fa-plus-circle add-icon"></i></button>
+                            <button type="button" id="addBtn" class="addBtn"><i
+                                    class="fas fa-plus-circle add-icon"></i></button>
+                            <button type="button" id="closeBtn" class="addBtn hide"><i
+                                    class="fas fa-times-circle add-icon"></i></button>
                         </div>
-                        <div class="mt-3">
-                            <%- include('partials/dash/sidebar-nav'); %>
+                        <div id="newCatDiv" class="hide">
+                            <form id="addNewForm">
+                                <div class="form-group">
+                                    <input type="input" class="form-control py-2 my-2" id="newCategory"
+                                        placeholder="Ex: Friday Team Lunch" />
+                                    <button type="submit" class="btn btn-warning full-width ">Save changes</button>
+                            </form>
                         </div>
+                        </form>
                     </div>
-                    <div class="col-10 marg-pad-0 ">
-                        <%- include('partials/dash/header'); %>
-
-                            <section class="container-fluid my-4">
-                                <div class="bg-color-box p-4 border rounded">
-                                    <div class="  dflex d-flex justify-content-between">
-                                        <div>
-                                            <h4>How do you get started?</h4>
-                                            <ul>
-                                                <li> Create </li>
-                                                <li> Launch </li>
-                                                <li> Results </li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                            </section>
+                    <div class="mt-3">
+                        <%- include('partials/dash/sidebar-nav'); %>
                     </div>
                 </div>
+                <div class="col-10 marg-pad-0 ">
+                    <%- include('partials/dash/header'); %>
+
+                        <section class="container-fluid my-4">
+                            <div class="bg-color-box p-4 border rounded">
+                                <div class="  dflex d-flex justify-content-between">
+                                    <div>
+                                        <h4>How do you get started?</h4>
+                                        <ul>
+                                            <li> Create </li>
+                                            <li> Launch </li>
+                                            <li> Results </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+                </div>
+            </div>
             </div>
             <!-- Bootstrap Required JS and jQuery Scripts -->
             <%- include('partials/dash/all_scripts'); %>

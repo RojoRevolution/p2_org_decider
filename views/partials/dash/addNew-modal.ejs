@@ -1,21 +1,22 @@
 <!-- Modal -->
-<div class="modal fade" id="addNew" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" id="modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title">Name Your Category</h5>
+                <h5 class="modal-title" id="exampleModalLabel">Enter A Category Title</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-                <form id="newCategory">
-                    <div class="mb-3">
-                        <input type="input" class="form-control" id="cat-title" placeholder="Friday Team Lunch">
-                    </div>
-                    <div class="mb-3">
-                        <button type="button" class="btn text-light full-width bg-color">Create New Category</button>
-                    </div>
-                </form>
+                <div class="form-group">
+                    <input type="input" class="form-control py-2 my-2" id="org-input"
+                        placeholder="Ex: Friday Team Lunch" />
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button type="submit" class="btn btn-primary">Save changes</button>
             </div>
         </div>
     </div>
+</div>
 </div>
