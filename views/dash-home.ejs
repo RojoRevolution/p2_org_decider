@@ -1,43 +1,40 @@
 <%- include('partials/dash/head'); %>
 
     <body>
-        <!-- MODAL PARTIAL -->
-        <%- include('partials/dash/addNew-modal'); %>
-            <!-- END MODAL PARTIAL -->
-            <div class="container-fluid">
-                <div class="row">
-                    <div class="col-2 py sidebar">
-                        <div class="my-3 text-center">
-                            <img src="/images/dashboard/yaynay_logo.png" alt="yay or nay logo">
-                        </div>
-                        <div class="my-4 text-center">
-                            <button type="button" id="addBtn" class="addBtn" data-bs-toggle="modal"
-                                data-bs-target="#addNew"><i class="fas fa-plus-circle add-icon"></i></button>
-                        </div>
-                        <div class="mt-3">
-                            <%- include('partials/dash/sidebar-nav'); %>
-                        </div>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-2 py sidebar">
+                    <div class="my-3 text-center">
+                        <a href="/dashboard"><img src="/images/dashboard/yaynay_logo.png" alt="yay or nay logo"></a>
                     </div>
-                    <div class="col-10 marg-pad-0 ">
-                        <%- include('partials/dash/header'); %>
-
-                            <section class="container-fluid my-4">
-                                <div class="bg-color-box p-4 border rounded">
-                                    <div class="  dflex d-flex justify-content-between">
-                                        <div>
-                                            <h4>How do you get started?</h4>
-                                            <ul>
-                                                <li> Create </li>
-                                                <li> Launch </li>
-                                                <li> Results </li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                            </section>
-                    </div>
+                    <!-- Add new Category Partial -->
+                    <%- include('partials/dash/addNewCategory'); %>
+                </div>
+                <div class="mt-3">
+                    <!-- Header Partial -->
+                    <%- include('partials/dash/sidebar-nav'); %>
                 </div>
             </div>
-            <!-- Bootstrap Required JS and jQuery Scripts -->
-            <%- include('partials/dash/all_scripts'); %>
+            <div class="col-10 marg-pad-0 ">
+                <%- include('partials/dash/header'); %>
+
+                    <section class="container-fluid my-4">
+                        <div class="card p-4 rounded">
+                            <div class="  dflex d-flex justify-content-between">
+                                <div>
+                                    <h4>How do you get started?</h4>
+                                    <ul>
+                                        <li> Create </li>
+                                        <li> Launch </li>
+                                        <li> Results </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+            </div>
+        </div>
+        </div>
+        <!-- Bootstrap Required JS and jQuery Scripts -->
+        <%- include('partials/dash/all_scripts'); %>
     </body>
