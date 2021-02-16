@@ -9,21 +9,23 @@ const runPoll = () => {
     let totalSeconds = 0;
     let secondsElapsed = 0;
     let minutes;
+    let interval;
 
 
     submitBtn.addEventListener('click', (e) => {
         e.preventDefault();
 
-        minutes = selectMinutes.value.trim();
         console.log(minutes);
         startTimer();
     })
 
     const startTimer = () => {
+        minutes = selectMinutes.value.trim();
+        clearInterval(interval);
         totalSeconds = minutes * 60;
 
         if (totalSeconds > 0) {
-            setInterval(() => {
+            interval = setInterval(() => {
                 totalSeconds--;
                 console.log(totalSeconds);
                 displayTimer();
@@ -36,33 +38,47 @@ const runPoll = () => {
 
     const getFormattedMinutes = () => {
         let minutesLeft = Math.floor(totalSeconds / 60);
-        let formattedMinutes;
+        console.log('=====================');
+        console.log(`getFormattedMinutes = ${minutesLeft}`);
+        console.log('=====================');
 
-        if (minutesLeft < 10) {
-            formattedMinutes = '0';
-        }
-        else {
-            formattedMinutes = minutesLeft;
-        }
+        let formattedMinutes = minutesLeft;
+
+
+        // if (minutesLeft < 10) {
+        //     formattedMinutes = minutesLeft;
+        //     console.log(`formatted minutes < 10 ${formattedMinutes}`);
+        // }
+        // else {
+        //     formattedMinutes = minutesLeft;
+        //     console.log(`formatted minutes !< 10 ${formattedMinutes}`)
+        // }
         return formattedMinutes;
     }
 
     const getFormattedSeconds = () => {
         let secondsLeft = totalSeconds % 60;
         let formattedSeconds;
+        console.log('=====================');
+        console.log(`getFormattedSeconds = ${secondsLeft}`);
+        console.log('=====================');
 
         if (secondsLeft < 10) {
-            formattedMinutes = '0' + secondsLeft;
+            formattedSeconds = `:0${secondsLeft}`;
+
+            console.log(`formatted seconds < 10 ${formattedSeconds}`);
         }
         else {
-            formattedSeconds = secondsLeft;
+            formattedSeconds = `:${secondsLeft}`;
+            console.log(`formatted seconds !< 10 ${formattedSeconds}`);
         }
+        console.log({ formattedSeconds });
         return formattedSeconds;
     }
 
     const displayTimer = () => {
         displayMinutes.textContent = getFormattedMinutes();
-        displaySeconds.textContenet = getFormattedSeconds();
+        displaySeconds.textContent = getFormattedSeconds();
     }
 };
 
