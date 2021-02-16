@@ -30,6 +30,9 @@ require('./routes/org-api-routes.js')(app);
 require('./routes/user-api-routes.js')(app);
 require('./routes/poll-api-routes.js')(app);
 require('./routes/idea-api-routes.js')(app);
+require('./routes/suggestions-api-routes.js')(app);
+require('./routes/votes-api-routes.js')(app);
+
 
 // Set Up EJS
 app.set('view engine', 'ejs');
@@ -39,7 +42,7 @@ app.set('views', path.join(__dirname, '/views'));
 
 // Syncing database and starting server
 // Add to Sync to drop table: { force: true }
-db.sequelize.sync({ force: true }).then(() => {
+db.sequelize.sync().then(() => {
     app.listen(PORT, function () {
         console.log("==> 🌎  Listening on port %s. Visit http://localhost:%s/ in your browser.", PORT, PORT);
     });

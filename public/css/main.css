@@ -9,7 +9,6 @@ html { box-sizing: border-box;  }
   height: auto;
 }
 
-/* Global */
   h1 {
     font-family: 'Work Sans', sans-serif;
     font-size: 2rem;
@@ -44,12 +43,7 @@ html { box-sizing: border-box;  }
     font-size: .75rem;
     color: #808080;
   }
-  header {
-    width: 1206px;
-    height: 115px;
-    background-color: #f7eede;
-  }
-
+ 
   .bg-color {
     background-color:#e5384c;
   }
@@ -102,10 +96,12 @@ html { box-sizing: border-box;  }
   top: 20px;
 }
 
-/* Exterior Pages */
-.background {
-  background-color: #FFF3E0;
+.hide {
+  display: none;
 }
+
+/* Exterior Pages */
+
 
 .intro-margin {
   margin: 14rem 0 0;
@@ -147,4 +143,31 @@ html { box-sizing: border-box;  }
 .card-adjust {
   width: 18rem;
   display: inline-block;
+}
+
+/* dashboard */
+
+.sidebar {
+  background-color:#e5384c;
+  height: 100vh;
+  max-width:250px;
+}
+
+.dash-header {
+  background-color: #f7eede;
+}
+
+.addBtn {
+  border:none;
+  background:none;
+}
+
+.add-icon {
+  cursor: pointer;
+  font-size:3rem;
+  color:#FFF3E0;
+}
+
+.add-icon:hover {
+  color:#d8cdbb;
 }

@@ -35,22 +35,22 @@ document.addEventListener("DOMContentLoaded", () => {
             body: JSON.stringify({
                 email: `${email}`,
                 password: `${password}`,
-                headers: {
-                    'Content-Type': 'application/json',
-                },
+            }),
+            headers: {
+                'Content-Type': 'application/json',
+            },
+        })
+            .then((response) => {
+                response.json()
             })
-                .then((response) => {
-                    response.json()
-                })
-
-                .then((data) => {
-                    window.location.replace("/dashboard")
-                })
-                .catch(function (err) {
-                    console.log(err);
-                })
-        });
-
+            .then((data) => {
+                window.location.replace("/dashboard")
+            })
+            .catch(function (err) {
+                console.log(err);
+            })
     };
+
+
 
 });
