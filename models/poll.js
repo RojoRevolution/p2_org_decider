@@ -1,13 +1,13 @@
 module.exports = (sequelize, DataTypes) => {
   const Poll = sequelize.define('Poll', {
-    name : {
+    name: {
       type: DataTypes.STRING(70),
       allowNull: false,
       validate: {
         len: [1]
       }
     },
-    description : {
+    description: {
       type: DataTypes.STRING(200),
       allowNull: false,
       validate: {
