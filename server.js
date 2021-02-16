@@ -16,8 +16,6 @@ app.use(express.json());
 // use __dirname to ensure assets are always served
 app.use(express.static(path.join(__dirname, '/public')));
 
-
-
 // Useing sessions to keep track of user's login status
 app.use(session({ secret: "keyboard cat", resave: true, saveUninitialized: true }));
 app.use(passport.initialize());
@@ -40,7 +38,7 @@ app.set('views', path.join(__dirname, '/views'));
 
 // Syncing database and starting server
 // Add to Sync to drop table: { force: true }
-db.sequelize.sync().then(() => {
+db.sequelize.sync({force: true}).then(() => {
     app.listen(PORT, function () {
         console.log("==> 🌎  Listening on port %s. Visit http://localhost:%s/ in your browser.", PORT, PORT);
     });
