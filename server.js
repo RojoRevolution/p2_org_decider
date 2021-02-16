@@ -30,8 +30,6 @@ require('./routes/org-api-routes.js')(app);
 require('./routes/user-api-routes.js')(app);
 require('./routes/poll-api-routes.js')(app);
 require('./routes/idea-api-routes.js')(app);
-require('./routes/suggestions-api-routes.js')(app);
-require('./routes/votes-api-routes.js')(app);
 
 
 // Set Up EJS
