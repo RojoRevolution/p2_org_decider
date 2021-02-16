@@ -6,7 +6,7 @@ html { box-sizing: border-box;  }
 }
 
 .viewport-height {
-    height: 100vh
+  height: auto;
 }
 
 /* Global */
