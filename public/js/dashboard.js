@@ -6,6 +6,8 @@ document.addEventListener("DOMContentLoaded", () => {
     const newCatForm = document.getElementById('addNewForm')
     const newCatInput = document.getElementById('newCategory')
 
+
+
     // Add / Plus button Event Listener
     addNewBtn.addEventListener('click', (event) => {
         event.preventDefault()
@@ -35,12 +37,16 @@ document.addEventListener("DOMContentLoaded", () => {
         if (!category) {
             return;
         }
+
         // Call funcion below once we have API routes
-        // addNewCategory(category);
+        addNewCategory(category);
+
 
         // ===== TEMPORARY UNTIL WE USE API ROUTES ==== //
-        window.location.replace("/category");
+        // window.location.replace(`dashboard/${category}`);
         // ========= //
+
+        // getCategory(category);
 
         newCatInput.value = "";
 
@@ -61,10 +67,30 @@ document.addEventListener("DOMContentLoaded", () => {
                 response.json()
             })
             .then((data) => {
-                window.location.replace("/category");
+                window.location.replace(`/dashboard/${category}`);
             })
             .catch(handleLoginErr);
     }
+
+    //Need to confirm which routes we are using for this.....
+    // const getCategory = (category) => {
+    //     fetch(`/api/:${category}`, {
+    //         method: 'GET',
+    //         body: JSON.stringify({
+    //             category: `${category}`,
+    //         }),
+    //         headers: {
+    //             'Content-Type': 'application/json',
+    //         },
+    //     })
+    //         .then((response) => {
+    //             response.json()
+    //         })
+    //         .then((data) => {
+    //             window.location.replace(`dashboard/${category}`);
+    //         })
+    //         .catch(handleLoginErr);
+    // }
 
     handleLoginErr = (err) => {
         alert(text(responseJSON))

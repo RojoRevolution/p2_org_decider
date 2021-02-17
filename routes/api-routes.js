@@ -9,6 +9,7 @@ module.exports = (app) => {
         console.log(req.user);
         res.json(req.user);
     });
+
     // Post routes for signing up
     app.post("/api/signup", (req, res) => {
         console.log('//// API SIGNUP ////');

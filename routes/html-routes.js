@@ -37,9 +37,13 @@ module.exports = (app) => {
 
     // Dashboard Category Pages
     // This will mot likely need to be a /:category path that takes in the category name
-    app.get("/category", isAuthenticated, (req, res) => {
+    app.get("/dashboard/:category", isAuthenticated, (req, res) => {
+        // This is placeholder until we get the DB working
+        let name = req.params
+        let categories = []
+
         res.render("category", {
-            title: 'Category | Yay or Nay'
+            title: `${name} | Yay or Nay`
         });
     });
 }
