@@ -5,6 +5,10 @@ html { box-sizing: border-box;  }
     box-sizing: inherit;
 }
 
+body {
+  background-color:#FFF3E0;
+}
+
 .viewport-height {
   height: auto;
 }
