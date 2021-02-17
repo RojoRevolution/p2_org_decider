@@ -32,7 +32,7 @@ document.addEventListener("DOMContentLoaded", () => {
     newCatForm.addEventListener('submit', (event) => {
         event.preventDefault();
         console.log(newCatInput.value);
-        let category = newCatInput.value;
+        let category = newCatInput.value.trim();
 
         if (!category) {
             return;
@@ -41,19 +41,13 @@ document.addEventListener("DOMContentLoaded", () => {
         // Call funcion below once we have API routes
         addNewCategory(category);
 
-
-        // ===== TEMPORARY UNTIL WE USE API ROUTES ==== //
-        // window.location.replace(`dashboard/${category}`);
-        // ========= //
-
-        // getCategory(category);
-
         newCatInput.value = "";
 
     })
 
     //Need to confirm which routes we are using for this.....
     const addNewCategory = (category) => {
+        //Need API category for this post. I thnk it might be idea-api-route.js?
         fetch(`/api/:${category}`, {
             method: 'POST',
             body: JSON.stringify({
@@ -67,6 +61,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 response.json()
             })
             .then((data) => {
+                // This is the HTMl route
                 window.location.replace(`/dashboard/${category}`);
             })
             .catch(handleLoginErr);
@@ -96,6 +91,35 @@ document.addEventListener("DOMContentLoaded", () => {
         alert(text(responseJSON))
         console.log(err)
     }
+
+    // =============================//
+    // Category / Idea / Poll Screen
+    // =============================//
+
+    const newSuggestBtn = document.getElementById('AddNewSuggest')
+    const newSuggestBlock = document.getElementById('newSuggestBlock')
+    const closeSuggest = document.getElementById('suggestionClose')
+    const suggestForm = document.getElementById('suggestForm')
+
+    newSuggestBtn.addEventListener('click', (event) => {
+        event.preventDefault(event)
+        console.log("Click New Suggest")
+        newSuggestBlock.classList.remove('hide');
+    });
+
+    closeSuggest.addEventListener('click', (event) => {
+        event.preventDefault(event)
+        console.log("Click Close")
+        newSuggestBlock.classList.add('hide');
+    });
+
+    suggestForm.addEventListener('submit', (event) => {
+        event.preventDefault(event)
+        console.log('Submit!')
+        // newSuggestBlock.classList.add('hide');
+    });
+
+
 
 });
 
