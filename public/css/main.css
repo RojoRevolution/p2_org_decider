@@ -5,10 +5,8 @@ html { box-sizing: border-box;  }
     box-sizing: inherit;
 }
 
-/* Global */
-
-body {
-  background-color: #FFF3E0;
+.viewport-height {
+  height: auto;
 }
 
   h1 {

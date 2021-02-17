@@ -1,12 +1,12 @@
 // variables for DOM elements
-const signUpform = document.getElementById('signUpForm')
+const signUpForm = document.getElementById('signUpForm')
 const orgInputValue = document.getElementById('org-input')
 const emailInputValue = document.getElementById('email-input')
 const passInputValue = document.getElementById('pass-input')
 
 document.addEventListener("DOMContentLoaded", () => {
     // Event listener for sign up form
-    signUpform.addEventListener('submit', (event) => {
+    signUpForm.addEventListener('submit', (event) => {
         event.preventDefault();
         // Save user Data to a variable
         let userData = {
