@@ -29,17 +29,19 @@ module.exports = (app) => {
     app.get("/dashboard", isAuthenticated, (req, res) => {
         console.log('//// HTML ROUTE ////');
         console.log(req.user);
-        // const pageTitle = "Dashboard | Yay Or N"
-        // console.log('/////// PAGE TITLE //////')
-        // console.log({ pageTitle })
+
         res.render("dash-home", { title: 'Dashboard | Yay or Nay' });
     });
 
     // Dashboard Category Pages
     // This will mot likely need to be a /:category path that takes in the category name
-    app.get("/category", isAuthenticated, (req, res) => {
+    app.get("/dashboard/:category", isAuthenticated, (req, res) => {
+        let name = req.params.category;
+        console.log(name)
+        let categories = []
+
         res.render("category", {
-            title: 'Category | Yay or Nay'
+            title: `${name} | Yay or Nay`
         });
     });
 }
