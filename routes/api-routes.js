@@ -1,5 +1,6 @@
 var db = require("../models");
 var passport = require("../config/passport");
+const isAuthenticated = require("../config/middleware/isAuthenticated");
 
 
 module.exports = (app) => {
@@ -82,6 +83,24 @@ module.exports = (app) => {
         req.logout();
         res.redirect("/login");
     });
+
+    // Post route for Category
+    app.post("/api/:category", isAuthenticated, (req, res) => {
+        console.log(req.body);
+        db.Category.create(
+            {
+                category: req.body.category,
+                UserId: req.user.id,
+            })
+            .then((dbCategory) => {
+                console.log({ dbCategory });
+                res.status(201).json(dbCategory);
+            })
+            .catch((err) => {
+                console.log(err);
+                res.status(400).json(err);
+            })
+    })
 };
 
 const signUser = async (dbOrg, body, res) => {
