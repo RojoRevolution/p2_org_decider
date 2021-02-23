@@ -28,6 +28,7 @@ module.exports = (app) => {
     // Main Dashboard Page
     app.get("/dashboard", isAuthenticated, (req, res) => {
         console.log('//// HTML ROUTE ////');
+
         console.log(req.user);
 
         res.render("dash-home", { title: 'Dashboard | Yay or Nay' });
