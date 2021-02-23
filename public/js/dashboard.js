@@ -117,7 +117,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const voteSettingsBlock = document.getElementById('voteSettings')
     const voteSettingsForm = document.getElementById('voteSettingsForm')
     const cancelVoteBtn = document.getElementById('cancelVote')
-    const activeVoteBlock = document.getElementById('activeVote')
+    const activeVoteBlock = document.getElementById('activeVoteBlock')
 
     // TimeLeft
     let timeLeft = 60;
@@ -167,17 +167,14 @@ document.addEventListener("DOMContentLoaded", () => {
                 break;
         }
 
-
-        voteSettingsBlock.classList.add('hide');
         activeVoteBlock.classList.remove('hide');
+        voteSettingsBlock.classList.add('hide');
 
     });
 
     const setTimer = (timer) => {
 
     };
-
-
 });
 
 
