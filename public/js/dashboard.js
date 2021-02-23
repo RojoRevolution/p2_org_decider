@@ -1,12 +1,11 @@
 
 document.addEventListener("DOMContentLoaded", () => {
+    // Sidebar Variables
     const addNewBtn = document.getElementById('addBtn');
     const closeCatBtn = document.getElementById('closeBtn');
     const newCatDiv = document.getElementById('newCatDiv')
     const newCatForm = document.getElementById('addNewForm')
     const newCatInput = document.getElementById('newCategory')
-
-
 
     // Add / Plus button Event Listener
     addNewBtn.addEventListener('click', (event) => {
@@ -45,6 +44,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
     })
 
+    const getAllCategories = () => {
+        fetch
+    }
+
     //Need to confirm which routes we are using for this.....
     const addNewCategory = (category) => {
         console.log({ category });
@@ -69,25 +72,6 @@ document.addEventListener("DOMContentLoaded", () => {
             .catch(handleLoginErr);
     }
 
-    //Need to confirm which routes we are using for this.....
-    // const getCategory = (category) => {
-    //     fetch(`/api/:${category}`, {
-    //         method: 'GET',
-    //         body: JSON.stringify({
-    //             category: `${category}`,
-    //         }),
-    //         headers: {
-    //             'Content-Type': 'application/json',
-    //         },
-    //     })
-    //         .then((response) => {
-    //             response.json()
-    //         })
-    //         .then((data) => {
-    //             window.location.replace(`dashboard/${category}`);
-    //         })
-    //         .catch(handleLoginErr);
-    // }
 
     handleLoginErr = (err) => {
         alert(text(responseJSON))
@@ -123,6 +107,86 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 
+
+
+    // =============================//
+    // Vote Block
+    // =============================//
+    const newVoteBtn = document.getElementById('newVoteBtn')
+    const voteBlock = document.getElementById('upForVote')
+    const voteSettingsBlock = document.getElementById('voteSettings')
+    const voteSettingsForm = document.getElementById('voteSettingsForm')
+    const cancelVoteBtn = document.getElementById('cancelVote')
+    const activeVoteBlock = document.getElementById('activeVoteBlock')
+    const timerEl = document.getElementById('timer');
+
+    // TimeLeft
+    let timeLeft = 60;
+
+    newVoteBtn.addEventListener('click', (event) => {
+        event.preventDefault(event)
+        console.log("Click New Suggest")
+        voteBlock.classList.add('hide');
+        voteSettingsBlock.classList.remove('hide');
+    });
+
+    cancelVoteBtn.addEventListener('click', (event) => {
+        event.preventDefault(event)
+        console.log("Click New Suggest")
+        voteBlock.classList.remove('hide');
+        voteSettingsBlock.classList.add('hide');
+    });
+
+    // Event Listener for Vote Timer Form
+    voteSettingsForm.addEventListener('submit', (event) => {
+        event.preventDefault();
+        // Select Radio Butons
+        const radioBtns = document.querySelectorAll('input[name="time"]');
+        // Empty variable that will temporarily store the radio btn value
+        let radioValue;
+        // search for the radio that is check, pass to the radiovValue variables
+        for (const radioBtn of radioBtns) {
+            if (radioBtn.checked) {
+                radioValue = radioBtn.value;
+                break;
+            };
+        };
+
+        // Adjust the timeLeft variable based on the radio value
+        switch (radioValue) {
+            case '1':
+                timeLeft = 60;
+                console.log(timeLeft)
+                break;
+            case '5':
+                timeLeft = 300;
+                console.log(timeLeft)
+                break;
+            case '10':
+                timeLeft = 600;
+                console.log(timeLeft)
+                break;
+        }
+        setTimer()
+        activeVoteBlock.classList.remove('hide');
+        voteSettingsBlock.classList.add('hide');
+
+    });
+
+    const setTimer = () => {
+        var timerInterval = setInterval(function () {
+            //time limit descreses every second by 1
+            timeLeft--;
+            //renders the time to the page
+            timerEl.textContent = `${timeLeft}`;
+            if (timeLeft <= 0) {
+                clearInterval(timerInterval);
+                timeLeft = 60
+                console.log('RENDER RESULTS HERE')
+                // results();
+            }
+        }, 1000);
+    };
 });
 
 

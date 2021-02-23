@@ -9,25 +9,32 @@
                     </div>
                     <!-- Add new Category Partial -->
                     <%- include('partials/dash/addNewCategory'); %>
-                </div>
-                <div class="mt-3">
-                    <!-- Header Partial -->
-                    <%- include('partials/dash/sidebar-nav'); %>
+                        <div class="mt-3">
+                            <!-- Header Partial -->
+                            <%- include('partials/dash/sidebar-nav'); %>
+                        </div>
                 </div>
             </div>
-            <div class="col marg-pad-0 ">
+            <div class="col marg-pad-0 main-content">
                 <!-- Header -->
-                <%- include('partials/dash/header'); %>
-                    <!--  Category Data Block-->
+                <div>
+                    <%- include('partials/dash/header'); %>
+                </div>
+                <!--  Category Data Block-->
+                <div>
                     <%- include('partials/dash/category-data'); %>
-                        <!--  Category Vote Block-->
-                        <%- include('partials/dash/vote-block'); %>
-                            <!--  Category Suggestion Block-->
-                            <%- include('partials/dash/suggestion-block'); %>
+                </div>
 
+                <!--  Category Vote Block-->
+                <div>
+                    <%- include('partials/dash/vote-block'); %>
+                </div>
+                <!--  Category Suggestion Block-->
+                <div>
+                    <%- include('partials/dash/suggestion-block'); %>
+                </div>
 
             </div>
-        </div>
         </div>
         <!-- Bootstrap Required JS and jQuery Scripts -->
         <%- include('partials/dash/all_scripts'); %>

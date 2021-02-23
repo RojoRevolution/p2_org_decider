@@ -1,19 +1,27 @@
 <section class="container-fluid my-4">
-    <div class=" card p-4 rounded">
-        <div class="d-flex justify-content-between">
-            <div>
-                <h4>Up For A Vote</h4>
-            </div>
-            <div id="addNew">
+    <div class="card p-4 rounded">
+        <div id="upForVote">
+            <div class="d-flex justify-content-between">
                 <div>
-                    <btn id="newVoteBtn" class="btn btn-secondary btn-sm">
-                        Start a new Vote
-                    </btn>
+                    <h4>Up For A Vote</h4>
+                </div>
+                <div id="addNew">
+                    <div>
+                        <btn id="newVoteBtn" class="btn btn-secondary btn-sm">
+                            Start a new Vote
+                        </btn>
+                    </div>
                 </div>
             </div>
+            <div class="my-3">
+                <%- include('vote-cards'); %>
+            </div>
         </div>
-        <div class="my-3">
-            <%- include('vote-cards'); %>
+        <div id="voteSettings" class="hide">
+            <%- include('vote-settings'); %>
+        </div>
+        <div id="activeVoteBlock" class="hide">
+            <%- include('active-vote'); %>
         </div>
     </div>
 </section>

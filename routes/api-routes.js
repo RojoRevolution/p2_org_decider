@@ -86,14 +86,14 @@ module.exports = (app) => {
 
     // Post route for Category
     app.post("/api/:category", isAuthenticated, (req, res) => {
-        console.log(req.body);
+        // console.log(req.body);
         db.Category.create(
             {
                 category: req.body.category,
                 UserId: req.user.id,
             })
             .then((dbCategory) => {
-                console.log({ dbCategory });
+                // console.log({ dbCategory });
                 res.status(201).json(dbCategory);
             })
             .catch((err) => {

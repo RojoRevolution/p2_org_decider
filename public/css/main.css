@@ -75,6 +75,10 @@ body {
 
 /* Helper Classes */
 
+.height-auto {
+  height:auto;
+}
+
 .center-auto {
   margin: 0 auto
 }
@@ -90,6 +94,11 @@ body {
 
 .pos-absolute {
   position: absolute;
+}
+
+.dis-inline {
+  display: inline-block;
+  margin-left: 15px;
 }
 
 .right10 {
@@ -143,7 +152,7 @@ body {
 
 /* font-awesome icons */
 .icon-size {
-  font-size:2rem
+  font-size:1.5rem
 }
 
 .icon-size:hover {
@@ -164,10 +173,12 @@ body {
   height: 100vh;
   max-width:250px;
   width: 99%;
+  position: fixed;
 }
 
 .main-content {
   width:100%;
+  margin-left: 250px;
 }
 
 .dash-header {
@@ -187,6 +198,14 @@ body {
 
 .add-icon:hover {
   color:#d8cdbb;
+}
+
+.voteCount {
+  margin: 0;
+  padding: 2px 6px 0;
+  text-align: center;
+  font-weight: 700;
+  font-size: 1.15rem;
 }
 
 .newSuggest {
