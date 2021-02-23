@@ -21,6 +21,11 @@ app.use(session({ secret: "keyboard cat", resave: true, saveUninitialized: true 
 app.use(passport.initialize());
 app.use(passport.session());
 
+// Set Up EJS
+app.set('view engine', 'ejs');
+// Ensures the path to the views folder is always reached
+app.set('views', path.join(__dirname, '/views'));
+
 // Routes
 require('./routes/html-routes.js')(app);
 require('./routes/api-routes.js')(app);
@@ -30,10 +35,10 @@ require('./routes/poll-api-routes.js')(app);
 require('./routes/idea-api-routes.js')(app);
 
 
-// Set Up EJS
-app.set('view engine', 'ejs');
-// Ensures the path to the views folder is always reached
-app.set('views', path.join(__dirname, '/views'));
+// // Set Up EJS
+// app.set('view engine', 'ejs');
+// // Ensures the path to the views folder is always reached
+// app.set('views', path.join(__dirname, '/views'));
 
 
 // Syncing database and starting server

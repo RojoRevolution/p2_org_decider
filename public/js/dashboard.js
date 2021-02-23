@@ -72,25 +72,6 @@ document.addEventListener("DOMContentLoaded", () => {
             .catch(handleLoginErr);
     }
 
-    //Need to confirm which routes we are using for this.....
-    // const getCategory = (category) => {
-    //     fetch(`/api/:${category}`, {
-    //         method: 'GET',
-    //         body: JSON.stringify({
-    //             category: `${category}`,
-    //         }),
-    //         headers: {
-    //             'Content-Type': 'application/json',
-    //         },
-    //     })
-    //         .then((response) => {
-    //             response.json()
-    //         })
-    //         .then((data) => {
-    //             window.location.replace(`dashboard/${category}`);
-    //         })
-    //         .catch(handleLoginErr);
-    // }
 
     handleLoginErr = (err) => {
         alert(text(responseJSON))
@@ -135,7 +116,11 @@ document.addEventListener("DOMContentLoaded", () => {
     const voteBlock = document.getElementById('upForVote')
     const voteSettingsBlock = document.getElementById('voteSettings')
     const voteSettingsForm = document.getElementById('voteSettingsForm')
-    const cancelVoteBtn = document.getElementById('canceVote')
+    const cancelVoteBtn = document.getElementById('cancelVote')
+    const activeVoteBlock = document.getElementById('activeVote')
+
+    // TimeLeft
+    let timeLeft = 60;
 
     newVoteBtn.addEventListener('click', (event) => {
         event.preventDefault(event)
@@ -150,6 +135,47 @@ document.addEventListener("DOMContentLoaded", () => {
         voteBlock.classList.remove('hide');
         voteSettingsBlock.classList.add('hide');
     });
+
+    // Event Listener for Vote Timer Form
+    voteSettingsForm.addEventListener('submit', (event) => {
+        event.preventDefault();
+        // Select Radio Butons
+        const radioBtns = document.querySelectorAll('input[name="time"]');
+        // Empty variable that will temporarily store the radio btn value
+        let radioValue;
+        // search for the radio that is check, pass to the radiovValue variables
+        for (const radioBtn of radioBtns) {
+            if (radioBtn.checked) {
+                radioValue = radioBtn.value;
+                break;
+            };
+        };
+
+        // Adjust the timeLeft variable based on the radio value
+        switch (radioValue) {
+            case '1':
+                timeLeft = 60;
+                console.log(timeLeft)
+                break;
+            case '5':
+                timeLeft = 300;
+                console.log(timeLeft)
+                break;
+            case '10':
+                timeLeft = 600;
+                console.log(timeLeft)
+                break;
+        }
+
+
+        voteSettingsBlock.classList.add('hide');
+        activeVoteBlock.classList.remove('hide');
+
+    });
+
+    const setTimer = (timer) => {
+
+    };
 
 
 });
