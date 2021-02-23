@@ -118,6 +118,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const voteSettingsForm = document.getElementById('voteSettingsForm')
     const cancelVoteBtn = document.getElementById('cancelVote')
     const activeVoteBlock = document.getElementById('activeVoteBlock')
+    const timerEl = document.getElementById('timer');
 
     // TimeLeft
     let timeLeft = 60;
@@ -166,14 +167,25 @@ document.addEventListener("DOMContentLoaded", () => {
                 console.log(timeLeft)
                 break;
         }
-
+        setTimer()
         activeVoteBlock.classList.remove('hide');
         voteSettingsBlock.classList.add('hide');
 
     });
 
-    const setTimer = (timer) => {
-
+    const setTimer = () => {
+        var timerInterval = setInterval(function () {
+            //time limit descreses every second by 1
+            timeLeft--;
+            //renders the time to the page
+            timerEl.textContent = `${timeLeft}`;
+            if (timeLeft <= 0) {
+                clearInterval(timerInterval);
+                timeLeft = 60
+                console.log('RENDER RESULTS HERE')
+                // results();
+            }
+        }, 1000);
     };
 });
 
