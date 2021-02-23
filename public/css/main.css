@@ -96,6 +96,11 @@ body {
   position: absolute;
 }
 
+.dis-inline {
+  display: inline-block;
+  margin-left: 15px;
+}
+
 .right10 {
   right: 10px;
 }
