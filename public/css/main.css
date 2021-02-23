@@ -75,6 +75,10 @@ body {
 
 /* Helper Classes */
 
+.height-auto {
+  height:auto;
+}
+
 .center-auto {
   margin: 0 auto
 }
@@ -164,10 +168,12 @@ body {
   height: 100vh;
   max-width:250px;
   width: 99%;
+  position: fixed;
 }
 
 .main-content {
   width:100%;
+  margin-left: 250px;
 }
 
 .dash-header {

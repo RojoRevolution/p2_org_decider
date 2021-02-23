@@ -1,7 +1,7 @@
 <%- include('partials/dash/head'); %>
 
     <body>
-        <div class="container-fluid">
+        <div class="container-fluid height-auto">
             <div class="row">
                 <div class="col-2 py sidebar">
                     <div class="my-3 text-center">
@@ -15,16 +15,21 @@
                     <%- include('partials/dash/sidebar-nav'); %>
                 </div>
             </div>
-            <div class="col marg-pad-0 ">
-                <!-- Header -->
-                <%- include('partials/dash/header'); %>
+            <div class="col marg-pad-0 main-content">
+                <div>
+                    <!-- Header -->
+                    <%- include('partials/dash/header'); %>
+                </div>
+                <div>
                     <!--  Category Data Block-->
                     <%- include('partials/dash/category-data'); %>
-                        <!--  Category Vote Block-->
-                        <%- include('partials/dash/vote-block'); %>
-                            <!--  Category Suggestion Block-->
-                            <%- include('partials/dash/suggestion-block'); %>
-
+                </div>
+                <div>
+                    <!--  Category Vote Block-->
+                    <%- include('partials/dash/vote-block'); %>
+                        <!--  Category Suggestion Block-->
+                        <%- include('partials/dash/suggestion-block'); %>
+                </div>
 
             </div>
         </div>

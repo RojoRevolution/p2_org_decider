@@ -144,6 +144,13 @@ document.addEventListener("DOMContentLoaded", () => {
         voteSettingsBlock.classList.remove('hide');
     });
 
+    cancelVoteBtn.addEventListener('click', (event) => {
+        event.preventDefault(event)
+        console.log("Click New Suggest")
+        voteBlock.classList.remove('hide');
+        voteSettingsBlock.classList.add('hide');
+    });
+
 
 });
 
