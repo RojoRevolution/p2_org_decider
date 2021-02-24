@@ -104,15 +104,14 @@ document.addEventListener("DOMContentLoaded", () => {
         let title = newTitle.value.trim();
         let description = newDescript.value.trim();
 
+
         if (!title || !description) {
             return;
         }
-
         addNewSuggestion(title, description);
     });
-
+    // Fetch Function to POST to ideas DB
     const addNewSuggestion = (title, description) => {
-
         fetch(`/api/ideas/`, {
             method: 'POST',
             body: JSON.stringify({
@@ -129,7 +128,6 @@ document.addEventListener("DOMContentLoaded", () => {
             .catch((err) => {
                 console.log(err);
             })
-
     }
 
 
