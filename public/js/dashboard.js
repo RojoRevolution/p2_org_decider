@@ -8,10 +8,6 @@ document.addEventListener("DOMContentLoaded", () => {
     const newCatForm = document.getElementById('addNewForm')
     const newCatInput = document.getElementById('newCategory')
 
-    addNewBtn.addEventListener('click', (event) => {
-        event.preventDefault();
-    });
-
 
     // Add / Plus button Event Listener
     addNewBtn.addEventListener('click', (event) => {
