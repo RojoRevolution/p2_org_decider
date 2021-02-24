@@ -3,6 +3,7 @@ var db = require("../models");
 var passport = require("../config/passport");
 const isAuthenticated = require('../config/middleware/isAuthenticated');
 
+
 module.exports = (app) => {
     // Homepage Route
     app.get('/', (req, res) => {
@@ -30,18 +31,22 @@ module.exports = (app) => {
     // Main Dashboard Page
     app.get("/dashboard", isAuthenticated, (req, res) => {
         console.log('//// HTML ROUTE ////');
-        // let fakeCategories = ['Category1', 'Category2']
-
+        let name = "Welcome to Yay or Nay"
         db.Category.findAll({
             attributes: [
-                'category'
+                'category',
+                'id'
             ],
         }).then((dbCategory) => {
             let allCategories = [];
+            let allLinks = [];
+            let allIDs = []
             console.log('===== EMPTY ARRAY =====')
             if (dbCategory.length > 0) {
                 // category = dbCategory;
                 for (let i = 0; i < dbCategory.length; i++) {
+                    allIDs.push(dbCategory[i].dataValues.id)
+                    allLinks.push('/' + dbCategory[i].dataValues.category)
                     allCategories.push(dbCategory[i].dataValues.category);
                 }
             }
@@ -50,7 +55,10 @@ module.exports = (app) => {
                 // res.status(404).json(category);
             }
             console.log(allCategories)
-            res.render("dash-home", { title: 'Dashboard | Yay or Nay', categories: allCategories });
+            console.log(allLinks)
+            console.log(allIDs)
+
+            res.render("dash-home", { title: `${name}`, categories: allCategories, links: allLinks, idNum: allIDs });
         })
             .catch((err) => {
                 console.log(err);
@@ -65,18 +73,21 @@ module.exports = (app) => {
     app.get("/dashboard/:category", isAuthenticated, (req, res) => {
         let name = req.params.category;
         console.log(name)
-        // getCategories()
-
         db.Category.findAll({
             attributes: [
-                'category'
+                'category',
+                'id'
             ],
         }).then((dbCategory) => {
             let allCategories = [];
+            let allLinks = [];
+            let allIDs = []
             console.log('===== EMPTY ARRAY =====')
             if (dbCategory.length > 0) {
                 // category = dbCategory;
                 for (let i = 0; i < dbCategory.length; i++) {
+                    allIDs.push(dbCategory[i].dataValues.id)
+                    allLinks.push('/' + dbCategory[i].dataValues.category)
                     allCategories.push(dbCategory[i].dataValues.category);
                 }
             }
@@ -85,7 +96,10 @@ module.exports = (app) => {
                 // res.status(404).json(category);
             }
             console.log(allCategories)
-            res.render("category", { title: 'Dashboard | Yay or Nay', categories: allCategories });
+            console.log(allLinks)
+            console.log(allIDs)
+
+            res.render("category", { title: ` ${name}: Yay or Nay?`, categories: allCategories, links: allLinks, idNum: allIDs });
         })
             .catch((err) => {
                 console.log(err);

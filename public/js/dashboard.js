@@ -31,6 +31,12 @@ document.addEventListener("DOMContentLoaded", () => {
     const newCatDiv = document.getElementById('newCatDiv')
     const newCatForm = document.getElementById('addNewForm')
     const newCatInput = document.getElementById('newCategory')
+    const navItems = document.getElementById('nav-ul')
+
+    addNewBtn.addEventListener('click', (event) => {
+        event.preventDefault();
+    });
+
 
     // Add / Plus button Event Listener
     addNewBtn.addEventListener('click', (event) => {

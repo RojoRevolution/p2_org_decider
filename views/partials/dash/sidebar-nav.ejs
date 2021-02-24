@@ -1,7 +1,9 @@
-<ul class="list-unstyled text-light">
-    <% for(let category of categories) { %>
-        <li class="p-3">
-            <%= category %>
-        </li>
-        <% } %>
+<ul id="nav-ul" class="list-unstyled text-light">
+    <% for(let i=0; i < categories.length; i++) { %>
+        <a href="/dashboard<%=links[i]%>">
+            <li class="p-3" data-attribute="<%= idNum %>">
+                <%= categories[i] %>
+            </li>
+        </a>
+        <% }; %>
 </ul>

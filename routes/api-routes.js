@@ -103,28 +103,28 @@ module.exports = (app) => {
     })
 
 
-    app.get('/api/categories', (req, res) => {
-        // db.Category.findAll({
-        //     attributes: [
-        //         'category'
-        //     ],
-        // })
-        //     .then((dbCategory) => {
-        //         console.log('Logging dbCategory: ', dbCategory)
-        //         if (dbCategory.length > 0) {
-        //             category = dbCategory;
-        //             console.log('RES 200')
-        //             res.status(200).json(category);
-        //         }
-        //         else {
-        //             res.status(404).json(category);
-        //         }
-        //     })
-        //     .catch((err) => {
-        //         console.log(err);
-        //         res.status(500).json(err);
-        //     });
-    });
+    // app.get('/api/categories', (req, res) => {
+    //     // db.Category.findAll({
+    //     //     attributes: [
+    //     //         'category'
+    //     //     ],
+    //     // })
+    //     //     .then((dbCategory) => {
+    //     //         console.log('Logging dbCategory: ', dbCategory)
+    //     //         if (dbCategory.length > 0) {
+    //     //             category = dbCategory;
+    //     //             console.log('RES 200')
+    //     //             res.status(200).json(category);
+    //     //         }
+    //     //         else {
+    //     //             res.status(404).json(category);
+    //     //         }
+    //     //     })
+    //     //     .catch((err) => {
+    //     //         console.log(err);
+    //     //         res.status(500).json(err);
+    //     //     });
+    // });
 
 
     app.get("/api/:category", isAuthenticated, (req, res) => {
