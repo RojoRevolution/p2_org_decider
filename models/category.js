@@ -6,6 +6,15 @@ module.exports = (sequelize, DataTypes) => {
             validate: {
                 len: [1]
             }
+        },
+        winner: {
+            type: DataTypes.INTEGER,
+            allowNull: true
+        },
+        active: {
+            type: DataTypes.BOOLEAN,
+            allowNull: false,
+            defaultValue: false
         }
     });
 
@@ -18,7 +27,8 @@ module.exports = (sequelize, DataTypes) => {
 
         Category.hasMany(models.Idea, {
             foreignKey: {
-                allowNull: false
+                allowNull: false,
+                onDelete: 'cascade'
             }
         });
     };

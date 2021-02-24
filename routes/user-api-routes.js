@@ -1,7 +1,8 @@
 const db = require('../models');
+const isAuthenticated = require("../config/middleware/isAuthenticated");
 
 module.exports = (app) => {
-  app.get('/api/users/', (req, res) => {
+  app.get('/api/users/', isAuthenticated, (req, res) => {
     db.User.findAll()
     .then((dbUser) => {
       if (dbUser.length > 0) {

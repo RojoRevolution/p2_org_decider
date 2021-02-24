@@ -16,7 +16,7 @@ app.use(express.json());
 // use __dirname to ensure assets are always served
 app.use(express.static(path.join(__dirname, '/public')));
 
-// Useing sessions to keep track of user's login status
+// Using sessions to keep track of user's login status
 app.use(session({ secret: "keyboard cat", resave: true, saveUninitialized: true }));
 app.use(passport.initialize());
 app.use(passport.session());
@@ -31,19 +31,12 @@ require('./routes/html-routes.js')(app);
 require('./routes/api-routes.js')(app);
 require('./routes/org-api-routes.js')(app);
 require('./routes/user-api-routes.js')(app);
-require('./routes/poll-api-routes.js')(app);
+require('./routes/category-api-routes.js')(app);
 require('./routes/idea-api-routes.js')(app);
-
-
-// // Set Up EJS
-// app.set('view engine', 'ejs');
-// // Ensures the path to the views folder is always reached
-// app.set('views', path.join(__dirname, '/views'));
-
 
 // Syncing database and starting server
 // Add to Sync to drop table: { force: true }
-db.sequelize.sync().then(() => {
+db.sequelize.sync({ force: true }).then(() => {
     app.listen(PORT, function () {
         console.log("==> 🌎  Listening on port %s. Visit http://localhost:%s/ in your browser.", PORT, PORT);
     });
