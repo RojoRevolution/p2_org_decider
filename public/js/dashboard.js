@@ -84,6 +84,10 @@ document.addEventListener("DOMContentLoaded", () => {
     const newSuggestBlock = document.getElementById('newSuggestBlock')
     const closeSuggest = document.getElementById('suggestionClose')
     const suggestForm = document.getElementById('suggestForm')
+    const ideasDiv = document.getElementById('ideasBlock')
+
+
+
 
     newSuggestBtn.addEventListener('click', (event) => {
         event.preventDefault(event)
@@ -110,6 +114,7 @@ document.addEventListener("DOMContentLoaded", () => {
             return;
         }
         addNewSuggestion(title, description, categoryId);
+        location.reload();
     });
     // Fetch Function to POST to ideas DB
     const addNewSuggestion = (title, description, categoryId) => {
@@ -125,6 +130,7 @@ document.addEventListener("DOMContentLoaded", () => {
             },
         })
             .then((response) => {
+                console.log(response)
                 response.json()
             })
             .catch((err) => {
@@ -210,7 +216,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 console.log('RENDER RESULTS HERE')
                 // results();
             }
-        }, 1000);
+        }, 500);
     };
 });
 
