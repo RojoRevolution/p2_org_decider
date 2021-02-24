@@ -21,7 +21,7 @@ module.exports = (sequelize, DataTypes) => {
   });
 
   Idea.associate = (models) => {
-    Idea.belongsTo(models.Poll, {
+    Idea.belongsTo(models.Category, {
       foreignKey: {
         allowNull: false
       }

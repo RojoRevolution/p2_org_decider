@@ -51,7 +51,7 @@ document.addEventListener("DOMContentLoaded", () => {
         console.log({ category });
 
         //Need API category for this post. I thnk it might be idea-api-route.js?
-        fetch(`/api/categories/:${category}`, {
+        fetch(`/api/categories/`, {
             method: 'POST',
             body: JSON.stringify({
                 category: `${category}`,

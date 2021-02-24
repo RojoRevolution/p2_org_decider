@@ -2,7 +2,7 @@ const db = require('../models');
 const isAuthenticated = require("../config/middleware/isAuthenticated");
 
 module.exports = (app) => {
-  app.post("/api/categories/:category", isAuthenticated, (req, res) => {
+  app.post("/api/categories/", isAuthenticated, (req, res) => {
     console.log('new category:', req.body);
     db.Category.create(
         {

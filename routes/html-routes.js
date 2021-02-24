@@ -80,6 +80,9 @@ module.exports = (app) => {
                 'category',
                 'id'
             ],
+            where: {
+                'UserId': req.user.id
+            }
         }).then((dbCategory) => {
             // Empty array variables wills store individual data for name, url, and ids
             let allCategories = [];
@@ -97,6 +100,9 @@ module.exports = (app) => {
             else {
                 console.log('No Categories Found')
             }
+            console.log('htmlroute-categories', allCategories);
+            console.log('htmlroute-links', allLinks);
+            console.log('htmlroute-ids', allIDs);
             // on render, we pass a page title, categories, links, and ID Numbers
             res.render("category", { title: ` ${name}: Yay or Nay?`, categories: allCategories, links: allLinks, idNum: allIDs });
         })
