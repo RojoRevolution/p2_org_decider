@@ -39,6 +39,9 @@ module.exports = (app) => {
                 'category',
                 'id'
             ],
+            where: {
+                'OrgId': req.user.OrgId
+            }
         }).then((dbCategory) => {
             // Empty array variables wills store individual data for name, url, and ids
             let allCategories = [];
@@ -81,7 +84,7 @@ module.exports = (app) => {
                 'id'
             ],
             where: {
-                'UserId': req.user.id
+                'OrgId': req.user.OrgId
             }
         }).then((dbCategory) => {
             // Empty array variables wills store individual data for name, url, and ids

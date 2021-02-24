@@ -19,6 +19,10 @@ module.exports = (sequelize, DataTypes) => {
     Org.hasMany(models.User, {
       onDelete: 'cascade'
     });
+
+    Org.hasMany(models.Category, {
+      onDelete: 'cascade'
+    });
   };
 
   return Org;

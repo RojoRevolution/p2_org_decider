@@ -8,6 +8,7 @@ module.exports = (app) => {
         {
             category: req.body.category,
             UserId: req.user.id,
+            OrgId: req.user.OrgId
         })
         .then((dbCategory) => {
             // console.log({ dbCategory });
@@ -23,7 +24,7 @@ app.get("/api/categories", isAuthenticated, (req, res) => {
     db.Category.findAll(
         {
             where: {
-                UserId: req.user.id
+                OrgId: req.user.OrgId
             }
         })
         .then((dbCategory) => {

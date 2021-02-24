@@ -25,6 +25,12 @@ module.exports = (sequelize, DataTypes) => {
             }
         });
 
+        Category.belongsTo(models.Org, {
+            foreignKey: {
+              allowNull: false
+            }
+          });
+
         Category.hasMany(models.Idea, {
             foreignKey: {
                 allowNull: false,
