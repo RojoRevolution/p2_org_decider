@@ -25,6 +25,7 @@ module.exports = (app) => {
         name: req.body.name,
         description: req.body.description,
         UserId: req.user.id,
+        CategoryId: req.body.categoryId,
       })
       .then((dbIdea) => {
         console.log({ dbIdea });
