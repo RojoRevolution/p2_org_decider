@@ -101,7 +101,53 @@ module.exports = (app) => {
                 res.status(400).json(err);
             })
     })
+
+
+    app.get('/api/categories', (req, res) => {
+        // db.Category.findAll({
+        //     attributes: [
+        //         'category'
+        //     ],
+        // })
+        //     .then((dbCategory) => {
+        //         console.log('Logging dbCategory: ', dbCategory)
+        //         if (dbCategory.length > 0) {
+        //             category = dbCategory;
+        //             console.log('RES 200')
+        //             res.status(200).json(category);
+        //         }
+        //         else {
+        //             res.status(404).json(category);
+        //         }
+        //     })
+        //     .catch((err) => {
+        //         console.log(err);
+        //         res.status(500).json(err);
+        //     });
+    });
+
+
+    app.get("/api/:category", isAuthenticated, (req, res) => {
+        // console.log(req.body);
+        db.Category.findAll(
+            {
+                category: req.body.category,
+                UserId: req.user.id,
+            })
+            .then((dbCategory) => {
+                // console.log({ dbCategory });
+                res.status(201).json(dbCategory);
+            })
+            .catch((err) => {
+                console.log(err);
+                res.status(400).json(err);
+            })
+    });
+
 };
+
+
+
 
 const signUser = async (dbOrg, body, res) => {
     // If the Org name matches then create a User

@@ -1,5 +1,30 @@
-
 document.addEventListener("DOMContentLoaded", () => {
+
+    // Variable that stores all categories
+    // let allCategories;
+
+    // const getAllCategories = () => {
+    //     fetch(`/api/categories`, {
+    //         method: 'GET',
+    //         headers: {
+    //             'Content-Type': 'application/json',
+    //         },
+    //     }).then((response) => {
+    //         console.log()
+    //         return response.json()
+    //     }).then((data) => {
+    //         console.log(`Success in getting Categories:`, data)
+    //         allCategories = data;
+    //         console.log("All Categories:", allCategories)
+    //     }).catch((error) => {
+    //         console.error('Error:', error);
+    //     });
+    // }
+
+
+    // getAllCategories();
+
+
     // Sidebar Variables
     const addNewBtn = document.getElementById('addBtn');
     const closeCatBtn = document.getElementById('closeBtn');
@@ -43,10 +68,6 @@ document.addEventListener("DOMContentLoaded", () => {
         newCatInput.value = "";
 
     })
-
-    const getAllCategories = () => {
-        fetch
-    }
 
     //Need to confirm which routes we are using for this.....
     const addNewCategory = (category) => {
