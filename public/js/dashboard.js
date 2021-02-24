@@ -1,29 +1,5 @@
 document.addEventListener("DOMContentLoaded", () => {
 
-    // Variable that stores all categories
-    // let allCategories;
-
-    // const getAllCategories = () => {
-    //     fetch(`/api/categories`, {
-    //         method: 'GET',
-    //         headers: {
-    //             'Content-Type': 'application/json',
-    //         },
-    //     }).then((response) => {
-    //         console.log()
-    //         return response.json()
-    //     }).then((data) => {
-    //         console.log(`Success in getting Categories:`, data)
-    //         allCategories = data;
-    //         console.log("All Categories:", allCategories)
-    //     }).catch((error) => {
-    //         console.error('Error:', error);
-    //     });
-    // }
-
-
-    // getAllCategories();
-
 
     // Sidebar Variables
     const addNewBtn = document.getElementById('addBtn');
@@ -31,7 +7,6 @@ document.addEventListener("DOMContentLoaded", () => {
     const newCatDiv = document.getElementById('newCatDiv')
     const newCatForm = document.getElementById('addNewForm')
     const newCatInput = document.getElementById('newCategory')
-    const navItems = document.getElementById('nav-ul')
 
     addNewBtn.addEventListener('click', (event) => {
         event.preventDefault();
