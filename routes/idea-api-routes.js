@@ -1,7 +1,8 @@
 const db = require('../models');
+const isAuthenticated = require("../config/middleware/isAuthenticated");
 
 module.exports = (app) => {
-  app.get('/api/ideas/', (req, res) => {
+  app.get('/api/ideas/', isAuthenticated, (req, res) => {
     db.Idea.findAll()
     .then((dbIdea) => {
       if (dbIdea.length > 0) {
@@ -17,7 +18,7 @@ module.exports = (app) => {
     });
   });
 
-  app.post('/api/ideas/', (req, res) => {
+  app.post('/api/ideas/', isAuthenticated, (req, res) => {
     db.Idea.create(req.body)
     .then((dbIdea) => {
       res.status(201).json(dbIdea);

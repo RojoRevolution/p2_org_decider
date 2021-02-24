@@ -1,7 +1,8 @@
 const db = require('../models');
+const isAuthenticated = require("../config/middleware/isAuthenticated");
 
 module.exports = (app) => {
-  app.get('/api/orgs/', (req, res) => {
+  app.get('/api/orgs/', isAuthenticated, (req, res) => {
     db.Org.findAll()
     .then((dbOrg) => {
       if (dbOrg.length > 0) {
@@ -17,7 +18,7 @@ module.exports = (app) => {
     });
   });
 
-  app.post('/api/orgs/', (req, res) => {
+  app.post('/api/orgs/', isAuthenticated, (req, res) => {
     db.Org.create(req.body)
     .then((dbOrg) => {
       res.status(201).json(dbOrg);

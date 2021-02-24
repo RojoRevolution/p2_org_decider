@@ -29,7 +29,7 @@ module.exports = function (sequelize, DataTypes) {
   User.associate = function (models) {
     // Each User will participate on multiple polls
 
-    User.hasMany(models.Poll, {
+    User.hasMany(models.Category, {
       onDelete: 'cascade'
     });
 
