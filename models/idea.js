@@ -1,13 +1,13 @@
 module.exports = (sequelize, DataTypes) => {
   const Idea = sequelize.define('Idea', {
-    name : {
+    name: {
       type: DataTypes.STRING(70),
       allowNull: false,
       validate: {
         len: [1]
       }
     },
-    description : {
+    description: {
       type: DataTypes.STRING(200),
       allowNull: false,
       validate: {
@@ -16,7 +16,8 @@ module.exports = (sequelize, DataTypes) => {
     },
     votes: {
       type: DataTypes.INTEGER,
-      allowNull: false
+      allowNull: false,
+      defaultValue: 0
     }
   });
 

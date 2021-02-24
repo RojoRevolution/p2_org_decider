@@ -103,20 +103,22 @@ document.addEventListener("DOMContentLoaded", () => {
         // newSuggestBlock.classList.add('hide');
         let title = newTitle.value.trim();
         let description = newDescript.value.trim();
+        let categoryId = parseInt(newTitle.getAttribute('data-attribute'));
 
 
         if (!title || !description) {
             return;
         }
-        addNewSuggestion(title, description);
+        addNewSuggestion(title, description, categoryId);
     });
     // Fetch Function to POST to ideas DB
-    const addNewSuggestion = (title, description) => {
+    const addNewSuggestion = (title, description, categoryId) => {
         fetch(`/api/ideas/`, {
             method: 'POST',
             body: JSON.stringify({
                 name: `${title}`,
                 description: `${description}`,
+                categoryId: `${categoryId}`,
             }),
             headers: {
                 'Content-Type': 'application/json',
