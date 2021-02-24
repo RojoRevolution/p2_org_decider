@@ -101,9 +101,34 @@ document.addEventListener("DOMContentLoaded", () => {
         event.preventDefault(event)
         console.log('Submit!')
         // newSuggestBlock.classList.add('hide');
+        let title = newTitle.value.trim();
+        let description = newDescript.value.trim();
+
+
+        if (!title || !description) {
+            return;
+        }
+        addNewSuggestion(title, description);
     });
-
-
+    // Fetch Function to POST to ideas DB
+    const addNewSuggestion = (title, description) => {
+        fetch(`/api/ideas/`, {
+            method: 'POST',
+            body: JSON.stringify({
+                name: `${title}`,
+                description: `${description}`,
+            }),
+            headers: {
+                'Content-Type': 'application/json',
+            },
+        })
+            .then((response) => {
+                response.json()
+            })
+            .catch((err) => {
+                console.log(err);
+            })
+    }
 
 
 
