@@ -1,11 +1,13 @@
-
 document.addEventListener("DOMContentLoaded", () => {
+
+
     // Sidebar Variables
     const addNewBtn = document.getElementById('addBtn');
     const closeCatBtn = document.getElementById('closeBtn');
     const newCatDiv = document.getElementById('newCatDiv')
     const newCatForm = document.getElementById('addNewForm')
     const newCatInput = document.getElementById('newCategory')
+
 
     // Add / Plus button Event Listener
     addNewBtn.addEventListener('click', (event) => {
@@ -43,10 +45,6 @@ document.addEventListener("DOMContentLoaded", () => {
         newCatInput.value = "";
 
     })
-
-    const getAllCategories = () => {
-        fetch
-    }
 
     //Need to confirm which routes we are using for this.....
     const addNewCategory = (category) => {
