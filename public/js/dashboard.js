@@ -142,25 +142,11 @@ document.addEventListener("DOMContentLoaded", () => {
         let btnID = event.target.getAttribute('data-attribute')
         console.log(`Button ID is: ${btnID}`)
 
-        putToVoteFetch(btnID);
+        toggleActive(btnID);
         // Reload the page so we can change the render location 
         location.reload();
     });
 
-    const putToVoteFetch = (rowId) => {
-        fetch(`/api/ideas/${rowId}`, {
-            method: 'PUT',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-        })
-            .then((response) => {
-                response.json()
-            })
-            .catch((err) => {
-                console.log(err);
-            })
-    }
 
 
 
@@ -173,6 +159,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const voteSettingsBlock = document.getElementById('voteSettings')
     const voteSettingsForm = document.getElementById('voteSettingsForm')
     const cancelVoteBtn = document.getElementById('cancelVote')
+    const inActiveVoteBlock = document.getElementById('inActiveVoteBlock')
     const activeVoteBlock = document.getElementById('activeVoteBlock')
     const timerEl = document.getElementById('timer');
 
@@ -229,6 +216,18 @@ document.addEventListener("DOMContentLoaded", () => {
 
     });
 
+    // Event Listener for the Move Up To A Vote Buttons
+    inActiveVoteBlock.addEventListener('click', (event) => {
+        event.preventDefault(event)
+        // btnID will target the row by ID
+        let closeBtnID = event.target.getAttribute('data-attribute')
+        console.log(`Close Button ID is: ${closeBtnID}`)
+
+        toggleActive(closeBtnID);
+        // Reload the page so we can change the render location 
+        location.reload();
+    });
+
     const setTimer = () => {
         var timerInterval = setInterval(function () {
             //time limit descreses every second by 1
@@ -243,6 +242,25 @@ document.addEventListener("DOMContentLoaded", () => {
             }
         }, 500);
     };
+
+    // FETCH used to toggle the boolean in the suggestion / vote cards
+    const toggleActive = (rowId) => {
+        fetch(`/api/ideas/${rowId}`, {
+            method: 'PUT',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+        })
+            .then((response) => {
+                response.json()
+            })
+            .catch((err) => {
+                console.log(err);
+            })
+    }
+
+
+
 });
 
 
