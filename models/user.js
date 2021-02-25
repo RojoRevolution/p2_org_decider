@@ -1,14 +1,9 @@
+// This model stores our user informaiton used to login. 
+
 const bcrypt = require('bcryptjs');
 
 module.exports = function (sequelize, DataTypes) {
   const User = sequelize.define('User', {
-    // username: {
-    //   type: DataTypes.STRING(70),
-    //   allowNull: false,
-    //   validate: {
-    //     len: [1]
-    //   }
-    // },
     email: {
       type: DataTypes.STRING,
       allowNull: false,

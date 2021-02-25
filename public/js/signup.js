@@ -14,7 +14,6 @@ document.addEventListener("DOMContentLoaded", () => {
             email: emailInputValue.value.trim(),
             password: passInputValue.value.trim(),
         };
-        console.log(userData);
         // If input fields are empty return out of function 
         if (!userData.org || !userData.email || !userData.password) {
             return;

@@ -1,3 +1,5 @@
+// These routes are used for the Suggestions added to the DB - We just never got around to changing the name from Ideas
+
 const db = require('../models');
 const isAuthenticated = require("../config/middleware/isAuthenticated");
 const { Sequelize } = require('../models');
@@ -19,6 +21,7 @@ module.exports = (app) => {
       });
   });
 
+  // Gets all suggestions
   app.post("/api/ideas/", isAuthenticated, (req, res) => {
     console.log('new idea:', req.body);
     db.Idea.create(
@@ -38,6 +41,7 @@ module.exports = (app) => {
       })
   });
 
+  // Gets individual Suggestion based on ID
   app.get('/api/ideas/:id', isAuthenticated, (req, res) => {
     db.Idea.findOne({
       where: {
@@ -58,6 +62,7 @@ module.exports = (app) => {
       });
   });
 
+  // Update specific suggestions - This is primarily used to update the Active Boolean
   app.put('/api/ideas/:id', isAuthenticated, (req, res) => {
     db.Idea.update(
       // Use Sequilize.literal so we can toggle the boolean
@@ -81,9 +86,10 @@ module.exports = (app) => {
       });
   });
 
+  // Update Suggestion Vote Count - This is used to +1 the vote count on each click
   app.put('/api/ideas/vote/up/:id', isAuthenticated, (req, res) => {
     db.Idea.update(
-      // Use Sequilize.literal so we can toggle the boolean
+      // Use Sequilize.literal so we can +1 the value
       { votes: Sequelize.literal('votes + 1') },
       {
         where: {
@@ -104,6 +110,7 @@ module.exports = (app) => {
       });
   });
 
+  // Update Suggestion Vote Count - This was going to be used to lower the vote count, but we did not get this far with the functionality
   app.put('/api/ideas/vote/down/:id', isAuthenticated, (req, res) => {
     db.Idea.update(
       // Use Sequilize.literal so we can toggle the boolean
@@ -126,6 +133,4 @@ module.exports = (app) => {
         res.status(500).json(err);
       });
   });
-
-
 }

@@ -1,8 +1,11 @@
+<!-- Partial for the initial landing page in the dashboard -->
+<!-- HTML Document beginning and <Head> -->
 <%- include('partials/dash/head'); %>
 
     <body>
         <div class="container-fluid height-auto">
             <div class="row">
+                <!-- Sidebar -->
                 <div class="col-2 py sidebar">
                     <div class="my-3 text-center">
                         <a href="/dashboard"><img src="/images/dashboard/yaynay_logo.png" alt="yay or nay logo"></a>
@@ -11,13 +14,15 @@
                     <%- include('partials/dash/addNewCategory'); %>
                 </div>
                 <div class="mt-3">
-                    <!-- Header Partial -->
+                    <!-- Navigation LI Partial -->
                     <%- include('partials/dash/sidebar-nav'); %>
                 </div>
             </div>
+            <!-- Main Content -->
             <div class="col marg-pad-0 main-content">
+                <!-- Header for content area -->
                 <%- include('partials/dash/header'); %>
-
+                    <!-- Instructional Content Section - This was not finished as we had hoped -->
                     <section class="container-fluid my-4">
                         <div class="card p-4 rounded">
                             <div class="  dflex d-flex justify-content-between">
@@ -37,6 +42,6 @@
             </div>
         </div>
         </div>
-        <!-- Bootstrap Required JS and jQuery Scripts -->
+        <!-- JS Scripts -->
         <%- include('partials/dash/all_scripts'); %>
     </body>

@@ -1,3 +1,5 @@
+// Model for the ideas (aka Suggestions) table. This store the suggestions that can be created and put up for a vote. Columns include the suggestion: Name, Description, Votes (stores the votecount), winner (stores the amount of times this suggestion has won), active (boolean which moves the item from suggestion to vote block)
+
 module.exports = (sequelize, DataTypes) => {
   const Idea = sequelize.define('Idea', {
     name: {

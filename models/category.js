@@ -1,3 +1,5 @@
+// Model for the Category Table which will store the main navigation in the sidebar once logged in.
+
 module.exports = (sequelize, DataTypes) => {
     const Category = sequelize.define('Category', {
         category: {
@@ -7,17 +9,7 @@ module.exports = (sequelize, DataTypes) => {
                 len: [1]
             }
         }
-        // winner: {
-        //     type: DataTypes.INTEGER,
-        //     allowNull: true
-        // },
-        // active: {
-        //     type: DataTypes.BOOLEAN,
-        //     allowNull: false,
-        //     defaultValue: false
-        // }
     });
-
     Category.associate = (models) => {
         Category.belongsTo(models.User, {
             foreignKey: {

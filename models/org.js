@@ -1,3 +1,4 @@
+// This model stores the organization created, which is used to group users within the dashboard so all user will see the same categories, suggestions and vote blocks within the dashboard.
 
 module.exports = (sequelize, DataTypes) => {
   const Org = sequelize.define('Org', {

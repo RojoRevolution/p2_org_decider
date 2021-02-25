@@ -1,9 +1,15 @@
+<!-- Partial holds the Main Naigation Items in the side bar -->
 <ul id="nav-ul" class="list-unstyled text-light">
+    <!-- Using EJS we run a for loop for the items rendered in the HTML route and create a new <li> for each item -->
     <% for(let i=0; i < categories.length; i++) { %>
+        <!-- We pass the URL for <a> tag so we can use each li as navigation -->
         <a href="/dashboard<%=links[i]%>">
+            <!-- We pass the data-attribute so we can use that category id inside of the category page -->
             <li class="p-3" data-attribute="<%= idNum %>">
+                <!-- This variable display the category name -->
                 <%= categories[i] %>
             </li>
         </a>
+        <!-- Close the EJS for loop -->
         <% }; %>
 </ul>
