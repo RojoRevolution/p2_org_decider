@@ -19,7 +19,6 @@ document.addEventListener("DOMContentLoaded", () => {
             newCatDiv.classList.remove('hide');
             addNewBtn.classList.add('rotate')
         }
-
     });
 
     // Event Listener to Submit the Add new Form
@@ -34,9 +33,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
         // Call function below once we have API routes
         addNewCategory(category);
-
         newCatInput.value = "";
-
     })
 
     //Need to confirm which routes we are using for this.....
@@ -214,7 +211,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Event Listener for the Move Up To A Vote Buttons
     inActiveVoteBlock.addEventListener('click', (event) => {
-        event.preventDefault(event)
+        event.preventDefault()
         // btnID will target the row by ID
         let closeBtnID = event.target.getAttribute('data-attribute')
         console.log(`Close Button ID is: ${closeBtnID}`)
@@ -226,16 +223,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
     activeCardsEl.addEventListener('click', (event) => {
         event.preventDefault(event)
-        // btnID will target the row by ID
-        // let voteUpId;
-        // let voteDownId;
-        const voteUpBtns = document.querySelectorAll('voteUp');
+        console.log('Click')
+        let voteUpBtn = event.target.getAttribute('data-attribute')
 
-        let voteUpId = voteUpBtns.getAttribute('data-attribute');;
-        // search for the radio that is check, pass to the radiovValue variables
-        console.log(voteUpId)
-
-
+        console.log(voteUpBtn)
 
     });
 
@@ -269,8 +260,6 @@ document.addEventListener("DOMContentLoaded", () => {
                 console.log(err);
             })
     }
-
-
 
 });
 
