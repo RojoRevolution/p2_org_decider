@@ -137,7 +137,9 @@ module.exports = (app) => {
                     'id',
                     'votes',
                     'categoryId',
-                    'userId'
+                    'userId',
+                    'winner',
+                    'active'
                 ],
                 where: {
                     'CategoryId': id,
