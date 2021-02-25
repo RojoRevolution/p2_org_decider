@@ -1,18 +1,24 @@
+<!-- Partial contains all active vote cards before a vote is started-->
+<!-- Used EJS to run a for loop and render all needed cards to the page -->
 <% for(let i=0; i < ideaNameTrue.length; i++) { %>
     <div class="card m-2 card-adjust">
         <div class="card-body pos-relative">
+            <!-- For these cards we added a Close button which moves the card back down tot he suggestion page by updated the Row -->
             <button type="button" class="btn-close pos-absolute close-icon" aria-label="Close"
                 data-attribute="<%= ideaIdsTrue[i]%>"></button>
             <div class="row">
                 <div class="col">
                     <h5 class="card-title">
+                        <!-- Card Title -->
                         <%= ideaNameTrue[i]%>
                     </h5>
                     <p class="card-text">
+                        <!-- Card Description -->
                         <%= ideaTextTrue[i]%>
                     </p>
                 </div>
             </div>
         </div>
     </div>
+    <!-- For Loop Closing Tag -->
     <% } %>
