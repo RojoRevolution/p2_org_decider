@@ -13,11 +13,14 @@ document.addEventListener("DOMContentLoaded", () => {
     addNewBtn.addEventListener('click', (event) => {
         event.preventDefault()
         // Show the form 
-        newCatDiv.classList.remove('hide');
-        // Hide the Add Button
-        addNewBtn.classList.add('hide')
-        // Show the Close Button
-        closeCatBtn.classList.remove('hide')
+        if (addNewBtn.classList.contains('rotate')) {
+            newCatDiv.classList.add('hide');
+            addNewBtn.classList.remove('rotate')
+        } else {
+            newCatDiv.classList.remove('hide');
+            addNewBtn.classList.add('rotate')
+        }
+
     });
 
     // Event Listener to close the add new Form
@@ -69,8 +72,6 @@ document.addEventListener("DOMContentLoaded", () => {
             })
             .catch(handleLoginErr);
     }
-
-
     handleLoginErr = (err) => {
         alert(text(responseJSON))
         console.log(err)
@@ -84,8 +85,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const newSuggestBlock = document.getElementById('newSuggestBlock')
     const closeSuggest = document.getElementById('suggestionClose')
     const suggestForm = document.getElementById('suggestForm')
-    const ideasDiv = document.getElementById('ideasBlock')
-
+    const suggestionCardsDiv = document.getElementById('suggestionCardBlock')
 
 
 
@@ -138,6 +138,20 @@ document.addEventListener("DOMContentLoaded", () => {
             })
     }
 
+    // Event Listener for the Move Up To A Vote Buttons
+    suggestionCardsDiv.addEventListener('click', (event) => {
+        event.preventDefault(event)
+        // btnID will target the row by ID
+        let btnID = event.target.getAttribute('data-attribute')
+        console.log(`Button ID is: ${btnID}`)
+
+        toggleActive(btnID);
+        // Reload the page so we can change the render location 
+        location.reload();
+    });
+
+
+
 
 
     // =============================//
@@ -148,7 +162,11 @@ document.addEventListener("DOMContentLoaded", () => {
     const voteSettingsBlock = document.getElementById('voteSettings')
     const voteSettingsForm = document.getElementById('voteSettingsForm')
     const cancelVoteBtn = document.getElementById('cancelVote')
+    const inActiveVoteBlock = document.getElementById('inActiveVoteBlock')
     const activeVoteBlock = document.getElementById('activeVoteBlock')
+    const activeCardsEl = document.getElementById('activeCardsDiv')
+    const voteUpBtn = document.querySelectorAll('.voteUp')
+    const voteDownBtn = document.querySelectorAll('voteDown')
     const timerEl = document.getElementById('timer');
 
     // TimeLeft
@@ -204,6 +222,33 @@ document.addEventListener("DOMContentLoaded", () => {
 
     });
 
+    // Event Listener for the Move Up To A Vote Buttons
+    inActiveVoteBlock.addEventListener('click', (event) => {
+        event.preventDefault(event)
+        // btnID will target the row by ID
+        let closeBtnID = event.target.getAttribute('data-attribute')
+        console.log(`Close Button ID is: ${closeBtnID}`)
+
+        toggleActive(closeBtnID);
+        // Reload the page so we can change the render location 
+        location.reload();
+    });
+
+    activeCardsEl.addEventListener('click', (event) => {
+        event.preventDefault(event)
+        // btnID will target the row by ID
+        // let voteUpId;
+        // let voteDownId;
+        const voteUpBtns = document.querySelectorAll('voteUp');
+
+        let voteUpId = voteUpBtns.getAttribute('data-attribute');;
+        // search for the radio that is check, pass to the radiovValue variables
+        console.log(voteUpId)
+
+
+
+    });
+
     const setTimer = () => {
         var timerInterval = setInterval(function () {
             //time limit descreses every second by 1
@@ -216,8 +261,27 @@ document.addEventListener("DOMContentLoaded", () => {
                 console.log('RENDER RESULTS HERE')
                 // results();
             }
-        }, 500);
+        }, 1000);
     };
+
+    // FETCH used to toggle the boolean in the suggestion / vote cards
+    const toggleActive = (rowId) => {
+        fetch(`/api/ideas/${rowId}`, {
+            method: 'PUT',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+        })
+            .then((response) => {
+                response.json()
+            })
+            .catch((err) => {
+                console.log(err);
+            })
+    }
+
+
+
 });
 
 

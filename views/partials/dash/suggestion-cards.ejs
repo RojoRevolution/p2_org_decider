@@ -1,13 +1,13 @@
-<% for(let i=0; i < ideaName.length; i++) { %>
+<% for(let i=0; i < ideaNameFalse.length; i++) { %>
     <div class="card m-2 card-adjust">
         <div class="card-body">
             <h5 class="card-title">
-                <%= ideaName[i]%>
+                <%= ideaNameFalse[i]%>
             </h5>
             <p>
-                <%= ideaDescription[i]%>
+                <%= ideaTextFalse[i]%>
             </p>
-            <btn class="btn btn-secondary btn-sm" data-attribute="<%= ideaIds[i]%>">Put Up For Vote</btn>
+            <btn class="btn btn-secondary btn-sm" data-attribute="<%= ideaIdsFalse[i]%>">Put Up For Vote</btn>
         </div>
     </div>
     <% }; %>

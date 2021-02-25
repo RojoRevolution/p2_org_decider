@@ -1,64 +1,28 @@
-<div class="card m-2 card-adjust">
-    <div class="card-body">
-        <div class="row">
-            <div class="col-2">
-                <a hfef="#"><i class=" fas fa-arrow-alt-circle-up icon-size"></i></a>
-                <p id="activeVote" class="voteCount">0</p>
-                <a hfef="#"><i class=" my-2 fas fa-arrow-alt-circle-down icon-size"></i></a>
-            </div>
-            <div class="col-10">
-                <h5 class="card-title">This is a suggestion</h5>
-                <p class="card-text">Some quick example text to build on the card title and make up
-                    the bulk of the card's content.</p>
-            </div>
-        </div>
-    </div>
-</div>
-<div class="card m-2 card-adjust">
-    <div class="card-body">
-        <div class="row">
-            <div class="col-2">
-                <a hfef="#"><i class=" fas fa-arrow-alt-circle-up icon-size"></i></a>
-                <p id="activeVote" class="voteCount">0</p>
-                <a hfef="#"><i class=" my-2 fas fa-arrow-alt-circle-down icon-size"></i></a>
-            </div>
-            <div class="col-10">
-                <h5 class="card-title">This is a suggestion</h5>
-                <p class="card-text">Some quick example text to build on the card title and make up
-                    the bulk of the card's content.</p>
+<div id="activeCardsDiv">
+    <% for(let i=0; i < ideaNameTrue.length; i++) { %>
+        <div class="card m-2 card-adjust">
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-2">
+                        <!-- Vote Up Button -->
+                        <button class="voteUp" data-attribute="<%= ideaIdsTrue[i]%>"><i
+                                class=" fas fa-arrow-alt-circle-up icon-size"></i></button>
+                        <!-- Vote Count Display -->
+                        <p id="voteCountDisplay" class="voteCount">0</p>
+                        <!-- Vote Down button -->
+                        <button class="voteDown" data-attribute="<%= ideaIdsTrue[i]%>"><i
+                                class=" my-2 fas fa-arrow-alt-circle-down icon-size"></i></button>
+                    </div>
+                    <div class="col-10">
+                        <h5 class="card-title">
+                            <%= ideaNameTrue[i]%>
+                        </h5>
+                        <p class="card-text">
+                            <%= ideaTextTrue[i]%>
+                        </p>
+                    </div>
+                </div>
             </div>
         </div>
-    </div>
-</div>
-<div class="card m-2 card-adjust">
-    <div class="card-body">
-        <div class="row">
-            <div class="col-2">
-                <a hfef="#"><i class=" fas fa-arrow-alt-circle-up icon-size"></i></a>
-                <p id="activeVote" class="voteCount">0</p>
-                <a hfef="#"><i class=" my-2 fas fa-arrow-alt-circle-down icon-size"></i></a>
-            </div>
-            <div class="col-10">
-                <h5 class="card-title">This is a suggestion</h5>
-                <p class="card-text">Some quick example text to build on the card title and make up
-                    the bulk of the card's content.</p>
-            </div>
-        </div>
-    </div>
-</div>
-<div class="card m-2 card-adjust">
-    <div class="card-body">
-        <div class="row">
-            <div class="col-2">
-                <a hfef="#"><i class=" fas fa-arrow-alt-circle-up icon-size"></i></a>
-                <p id="activeVote" class="voteCount">0</p>
-                <a hfef="#"><i class=" my-2 fas fa-arrow-alt-circle-down icon-size"></i></a>
-            </div>
-            <div class="col-10">
-                <h5 class="card-title">This is a suggestion</h5>
-                <p class="card-text">Some quick example text to build on the card title and make up
-                    the bulk of the card's content.</p>
-            </div>
-        </div>
-    </div>
+        <% } %>
 </div>

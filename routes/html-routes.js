@@ -28,7 +28,12 @@ module.exports = (app) => {
         res.render("login");
     });
 
-    // Main Dashboard Page
+    // ==========================================
+    // ==========================================
+    //  MAIN DASHBAORD PAGE
+    // ==========================================
+    // ==========================================
+
     app.get("/dashboard", isAuthenticated, (req, res) => {
         console.log('//// HTML ROUTE ////');
         // Generic Title / name for main page -- Non Dynamic
@@ -80,6 +85,7 @@ module.exports = (app) => {
 
     // ==========================================
     // ==========================================
+    //  CATEGORY PAGE
     // ==========================================
     // ==========================================
 
@@ -93,7 +99,18 @@ module.exports = (app) => {
         let allIdeaNames = []
         let allIdeaDesc = []
         let allIdeaIds = []
-        let catId;
+
+        // Arrays to hold idea cards that are false
+        let activeFalse = []
+        let ideaNameFalse = []
+        let ideaDescFalse = []
+        let ideaIdFalse = []
+
+        // arrays to hold idea cards that are true
+        let activeTrue = []
+        let ideaNameTrue = []
+        let ideaDescTrue = []
+        let ideaIdTrue = []
 
         // First DB Query
         db.Category.findAll({
@@ -137,7 +154,9 @@ module.exports = (app) => {
                     'id',
                     'votes',
                     'categoryId',
-                    'userId'
+                    'userId',
+                    'winner',
+                    'active'
                 ],
                 where: {
                     'CategoryId': id,
@@ -147,13 +166,30 @@ module.exports = (app) => {
                 if (dbSuggestions.length > 0) {
                     console.log(dbSuggestions)
                     // For some reaosn I have to redeclare this empty array otherwise undefined gets added to the beginning
-                    allIdeaNames = [];
+                    // allIdeaNames = [];
+                    // ideaNameFalse = [];
+                    // ideaNameTrue = [];
                     for (let i = 0; i < dbSuggestions.length; i++) {
-                        allIdeaNames.push(dbSuggestions[i].dataValues.name)
-                        console.log('//////// NAMES ///////')
-                        console.log(dbSuggestions[i].dataValues.name)
-                        allIdeaDesc.push(dbSuggestions[i].dataValues.description)
-                        allIdeaIds.push(dbSuggestions[i].dataValues.id)
+                        if (dbSuggestions[i].dataValues.active === false) {
+                            console.log('======== FALSE ======')
+                            ideaNameFalse.push(dbSuggestions[i].dataValues.name)
+                            ideaDescFalse.push(dbSuggestions[i].dataValues.description)
+                            ideaIdFalse.push(dbSuggestions[i].dataValues.id)
+                        } else {
+                            console.log('======== TRUE ======')
+                            ideaNameTrue.push(dbSuggestions[i].dataValues.name)
+                            ideaDescTrue.push(dbSuggestions[i].dataValues.description)
+                            ideaIdTrue.push(dbSuggestions[i].dataValues.id)
+                        }
+
+                        console.log('True', ideaNameFalse)
+                        console.log('False', ideaNameTrue)
+
+                        // allIdeaNames.push(dbSuggestions[i].dataValues.name)
+                        // console.log('//////// NAMES ///////')
+                        // console.log(dbSuggestions[i].dataValues.name)
+                        // allIdeaDesc.push(dbSuggestions[i].dataValues.description)
+                        // allIdeaIds.push(dbSuggestions[i].dataValues.id)
                     }
                 }
                 else {
@@ -169,8 +205,8 @@ module.exports = (app) => {
                 console.log('==============================')
                 console.log('1st DB Query: ', allCategories)
 
-                console.log('2nd DB Query', allIdeaNames)
-                console.log('2nd DB Query', allIdeaDesc)
+                console.log('2nd DB Query False', ideaNameFalse)
+                console.log('2nd DB Query True', ideaNameTrue)
                 console.log('==============================')
 
                 res.render("category", {
@@ -179,9 +215,12 @@ module.exports = (app) => {
                     links: allLinks,
                     idNum: allIDs,
                     id: id,
-                    ideaName: allIdeaNames,
-                    ideaDescription: allIdeaDesc,
-                    ideaIds: allIdeaIds
+                    ideaNameFalse: ideaNameFalse,
+                    ideaTextFalse: ideaDescFalse,
+                    ideaIdsFalse: ideaIdFalse,
+                    ideaNameTrue: ideaNameTrue,
+                    ideaTextTrue: ideaDescTrue,
+                    ideaIdsTrue: ideaIdTrue,
                 });
             }, 500);
         })

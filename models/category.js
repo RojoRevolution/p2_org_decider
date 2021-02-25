@@ -6,16 +6,16 @@ module.exports = (sequelize, DataTypes) => {
             validate: {
                 len: [1]
             }
-        },
-        winner: {
-            type: DataTypes.INTEGER,
-            allowNull: true
-        },
-        active: {
-            type: DataTypes.BOOLEAN,
-            allowNull: false,
-            defaultValue: false
         }
+        // winner: {
+        //     type: DataTypes.INTEGER,
+        //     allowNull: true
+        // },
+        // active: {
+        //     type: DataTypes.BOOLEAN,
+        //     allowNull: false,
+        //     defaultValue: false
+        // }
     });
 
     Category.associate = (models) => {
@@ -27,9 +27,9 @@ module.exports = (sequelize, DataTypes) => {
 
         Category.belongsTo(models.Org, {
             foreignKey: {
-              allowNull: false
+                allowNull: false
             }
-          });
+        });
 
         Category.hasMany(models.Idea, {
             foreignKey: {

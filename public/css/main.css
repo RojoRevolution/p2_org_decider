@@ -202,6 +202,15 @@ background:#d22e41;
 .addBtn {
   border:none;
   background:none;
+  transform: rotate(-270deg);
+  transition-timing-function: ease-in-out;
+  transition: 1s;
+}
+
+.rotate {
+  transform: rotate(315deg);
+  transition-timing-function: ease-in-out;
+  transition: 1s;
 }
 
 .add-icon {
@@ -227,6 +236,13 @@ background:#d22e41;
   text-align: center;
   font-weight: 700;
   font-size: 1.15rem;
+}
+
+.voteUp, .voteDown{
+  background: none;
+  border:none;
+  margin: 0;
+  padding: 0;
 }
 
 .newSuggest {
