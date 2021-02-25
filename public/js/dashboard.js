@@ -222,12 +222,25 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     activeCardsEl.addEventListener('click', (event) => {
-        event.preventDefault(event)
-        console.log('Click')
-        let voteUpBtn = event.target.getAttribute('data-attribute')
+        event.preventDefault(event);
+        let voteId = event.target.getAttribute('data-attribute');
+        console.log(voteId);
 
-        console.log(voteUpBtn)
+        // let voteCount = event.target.nextElementSibling;
+        // console.log(voteCount);
 
+        fetch(`/api/ideas/vote/up/${voteId}`, {
+            method: 'PUT',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+        })
+        .then((response) => {
+            response.json();
+        })
+        .catch((err) => {
+            console.log(err);
+        });
     });
 
     const setTimer = () => {
