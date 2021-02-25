@@ -264,6 +264,7 @@ module.exports = (app) => {
         let allIDs = []
         let allIdeaNames = []
         let allIdeaDesc = []
+        let allIdeaIds = []
         let catId;
 
         console.log('==============================')
@@ -331,10 +332,13 @@ module.exports = (app) => {
                 if (dbSuggestions.length > 0) {
                     console.log(dbSuggestions)
                     // category = dbCategory;
+                    allIdeaNames = [];
                     for (let i = 0; i < dbSuggestions.length; i++) {
                         allIdeaNames.push(dbSuggestions[i].dataValues.name)
+                        console.log('//////// NAMES ///////')
                         console.log(dbSuggestions[i].dataValues.name)
                         allIdeaDesc.push(dbSuggestions[i].dataValues.description)
+                        allIdeaIds.push(dbSuggestions[i].dataValues.id)
                         // if (dbCategory[i].dataValues.category === name) {
                         //     id = dbCategory[i].dataValues.id;
                         //     console.log('id to store as data attribute:', id);
@@ -342,13 +346,17 @@ module.exports = (app) => {
                     }
                 }
                 else {
+                    allIdeaNames = [];
                     console.log('No Ideas Found')
                 }
             })
         }).then(() => {
             setTimeout(() => {
+
+
                 console.log('==============================')
                 console.log('1st DB Query: ', allCategories)
+
                 console.log('2nd DB Query', allIdeaNames)
                 console.log('2nd DB Query', allIdeaDesc)
                 console.log('==============================')
@@ -360,7 +368,8 @@ module.exports = (app) => {
                     idNum: allIDs,
                     id: id,
                     ideaName: allIdeaNames,
-                    ideaDescription: allIdeaDesc
+                    ideaDescription: allIdeaDesc,
+                    ideaIds: allIdeaIds
                 });
             }, 500);
         })

@@ -4,7 +4,10 @@
             <h5 class="card-title">
                 <%= ideaName[i]%>
             </h5>
-            <btn class="btn btn-secondary btn-sm">Put Up For Vote</btn>
+            <p>
+                <%= ideaDescription[i]%>
+            </p>
+            <btn class="btn btn-secondary btn-sm" data-attribute="<%= ideaIds[i]%>">Put Up For Vote</btn>
         </div>
     </div>
     <% }; %>
