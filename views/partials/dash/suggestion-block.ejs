@@ -1,3 +1,4 @@
+<!-- Partial for the entire Add Suggestions Block -->
 <section class="container-fluid my-4">
     <div class="card p-4 rounded">
         <div class="d-flex justify-content-between">
@@ -6,12 +7,14 @@
             </div>
             <div id="addNew">
                 <div>
+                    <!-- Add New Suggestions Button -->
                     <btn id="AddNewSuggest" class="btn btn-secondary btn-sm">
                         Add New Suggestion
                     </btn>
                 </div>
             </div>
         </div>
+        <!-- This Section hold the Add New Suggestion Form - Hidden by default until button is clicked -->
         <div id="newSuggestBlock" class="pos-relative hide">
             <div class="card p-3 content-max pos-absolute newSuggest">
                 <h4>Add a Suggestion</h4>
@@ -28,7 +31,9 @@
             </div>
         </div>
     </div>
+    <!-- This section houses each indiidual Suggestion Card -->
     <div id="suggestionCardBlock" class="my-3">
+        <!-- Individual cards rendered through this partial -->
         <%- include('suggestion-cards'); %>
     </div>
 </section>

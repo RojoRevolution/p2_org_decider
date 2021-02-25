@@ -1,3 +1,4 @@
+<!-- Partial holds everything inside of the Vote Block -->
 <section class="container-fluid my-4">
     <div class="card p-4 rounded">
         <div id="upForVote">
@@ -13,13 +14,18 @@
                     </div>
                 </div>
             </div>
+
+            <!-- There are three sections to the vote block, hidden and shown as you interact with the content -->
+            <!-- First section houses cards that are moved to the vote block, before a vote is started -->
             <div id="inActiveVoteBlock" class="my-3">
                 <%- include('vote-cards'); %>
             </div>
         </div>
+        <!-- Second section gives the Timer Options which dictacte how long the vote will be active for -->
         <div id="voteSettings" class="hide">
             <%- include('vote-settings'); %>
         </div>
+        <!-- This is the Active Vote Block, which display the time left and actually lets you Vote by updating the Rows -->
         <div id="activeVoteBlock" class="hide">
             <%- include('active-vote'); %>
         </div>

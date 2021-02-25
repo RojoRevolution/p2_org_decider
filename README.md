@@ -2,13 +2,22 @@
 
 ![picture](public/images/yayornayhomepage.png)
 
-## User Story
+## Links
 
-*As a team within a company 					                  We want to be able to survey and vote on group decisions for activities or department decisions 					                  So we can organize and plan better.
+![GitHub Link](https://github.com/RojoRevolution/p2_org_decider)
 
-## Description
+![Deployed App on Heroku](https://p002-yay-or-nay.herokuapp.com/)
 
-Create an app that will allow you to put topics up for a vote within an organization or just a department, without having to send everyone external links to polls etc.
+
+## Project Description
+
+This was a group project for a Full-Stack Web Development Bootcamp offered through UT Austin. The goal of the project was to create a dashboard that users from the same organization could log into, create categories, add suggestions, then put suggestions up to a vote. 
+
+As an example, lets say a company has a team lunch every Friday, you could create a category for "Friday Team Lunch" where all users could submit suggestions. Next Friday comes along, and user can then choose from submitted suggestions and put them up to a vote. The voting timeframe has settings until voting closes, at the end of the voting period the item with the most votes wins.
+
+The main goal of this project was first and foremost to create a Full-stack web application, but most importantly, to become more familiar working with data from a DB. We also wanted to take advantage and get more experience with User Authentication, and grouping users by an organization. Using Sequelize and relational tables, we were successfully able to display only relevant information to users who share an Organization, and successfully able to display only relevant suggestions within their respective category.
+
+The Scope of this project ended up being much larger than we had anticipated, and were unfortunately at unable to finish the voting functionality, but did gain valuable experience working with relational tables and using the CRUD methodology within a DB.
 
 ## Technologies Used
 
@@ -25,16 +34,11 @@ Create an app that will allow you to put topics up for a vote within an organiza
 
 ## Contributors
 
-* David Rojo
-* Trevor Smith
-* Stephen Price
-* Richard Gabaree
+* ![David Rojo](https://github.com/RojoRevolution)
+* ![Trevor Smith](https://github.com/trevorsmithbanjo)
+* ![Stephen Price](https://github.com/stephenlprice)
+* ![Richard Gabaree](https://github.com/richardgabaree)
 
-## Links
-
-![GitHub Link] (https://github.com/RojoRevolution/p2_org_decider)
-
-!{Project Link} (
 
 ## License
 

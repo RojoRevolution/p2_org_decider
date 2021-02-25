@@ -5,15 +5,11 @@ var passport = require("../config/passport");
 module.exports = (app) => {
     // Post routes for logging in
     app.post("/api/login", passport.authenticate("local"), (req, res) => {
-        console.log('///// API LOGIN ////');
-        console.log(req.user);
         res.json(req.user);
     });
 
     // Post routes for signing up
     app.post("/api/signup", (req, res) => {
-        console.log('//// API SIGNUP ////');
-        console.log(req.body);
         // check if Org already exists
         db.Org.findAll({
             where: {

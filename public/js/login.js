@@ -5,7 +5,6 @@ const passInputValue = document.getElementById('pass-input')
 
 document.addEventListener("DOMContentLoaded", () => {
     // Event listener for sign up form
-
     logInForm.addEventListener('submit', (event) => {
         event.preventDefault();
         // save user data to a variable
@@ -13,8 +12,6 @@ document.addEventListener("DOMContentLoaded", () => {
             email: emailInputValue.value.trim(),
             password: passInputValue.value.trim(),
         };
-
-        console.log(userData);
 
         // If input fields are empty return out of function 
         if (!userData.email || !userData.password) {
@@ -28,7 +25,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     });
 
-    // Need to set up Login Function
+    // Login User function is called in the event listener above
     logInUser = (email, password) => {
         fetch('/api/login', {
             method: 'POST',
@@ -50,7 +47,4 @@ document.addEventListener("DOMContentLoaded", () => {
                 console.log(err);
             })
     };
-
-
-
 });

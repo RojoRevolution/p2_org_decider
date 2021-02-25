@@ -1,13 +1,19 @@
+<!-- Partial renders individual suggestion cards to the suggestions ection -->
+<!-- Using EJS we can run a for loop through the data rendered from the HTML Route -->
 <% for(let i=0; i < ideaNameFalse.length; i++) { %>
     <div class="card m-2 card-adjust">
         <div class="card-body">
+            <!-- Passing the title -->
             <h5 class="card-title">
                 <%= ideaNameFalse[i]%>
             </h5>
+            <!-- Passing the description -->
             <p>
                 <%= ideaTextFalse[i]%>
             </p>
+            <!-- Passing cateogry ID to the button so we can update that specific Row -->
             <btn class="btn btn-secondary btn-sm" data-attribute="<%= ideaIdsFalse[i]%>">Put Up For Vote</btn>
         </div>
     </div>
+    <!-- Closing For Loop Tag -->
     <% }; %>
