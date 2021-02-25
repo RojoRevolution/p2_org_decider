@@ -240,7 +240,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 console.log('RENDER RESULTS HERE')
                 // results();
             }
-        }, 500);
+        }, 1000);
     };
 
     // FETCH used to toggle the boolean in the suggestion / vote cards
