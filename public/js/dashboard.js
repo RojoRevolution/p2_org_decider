@@ -3,10 +3,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Sidebar Variables
     const addNewBtn = document.getElementById('addBtn');
-    const closeCatBtn = document.getElementById('closeBtn');
-    const newCatDiv = document.getElementById('newCatDiv')
-    const newCatForm = document.getElementById('addNewForm')
-    const newCatInput = document.getElementById('newCategory')
+    const newCatDiv = document.getElementById('newCatDiv');
+    const newCatForm = document.getElementById('addNewForm');
+    const newCatInput = document.getElementById('newCategory');
 
 
     // Add / Plus button Event Listener
@@ -23,19 +22,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
     });
 
-    // Event Listener to close the add new Form
-    closeCatBtn.addEventListener('click', (event) => {
-        event.preventDefault()
-        console.log("click Add Button")
-        newCatDiv.classList.add('hide');
-        closeCatBtn.classList.add('hide')
-        addNewBtn.classList.remove('hide')
-    });
-
     // Event Listener to Submit the Add new Form
     newCatForm.addEventListener('submit', (event) => {
         event.preventDefault();
-        console.log(newCatInput.value);
+        console.log('New Category', newCatInput.value);
         let category = newCatInput.value.trim();
 
         if (!category) {
