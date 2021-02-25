@@ -75,7 +75,6 @@ document.addEventListener("DOMContentLoaded", () => {
     const suggestionCardsDiv = document.getElementById('suggestionCardBlock')
 
 
-
     newSuggestBtn.addEventListener('click', (event) => {
         event.preventDefault(event)
         console.log("Click New Suggest")
@@ -136,10 +135,6 @@ document.addEventListener("DOMContentLoaded", () => {
         // Reload the page so we can change the render location 
         location.reload();
     });
-
-
-
-
 
     // =============================//
     // Vote Block
