@@ -177,6 +177,10 @@ body {
   padding: 0;
 }
 
+#menuDiv {
+  display: none;
+}
+
 #newCatDiv {
   padding: 0 15px;
 }
@@ -212,6 +216,13 @@ background:#d22e41;
 
 .add-icon:hover {
   color:#d8cdbb;
+}
+
+.close-icon {
+  color: #545454;
+  font-size: .75rem;
+  top: 5px;
+  right: 5px;
 }
 
 .voteCount {
