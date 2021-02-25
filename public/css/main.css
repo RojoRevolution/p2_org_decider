@@ -241,6 +241,7 @@ background:#d22e41;
 }
 
 .voteUp, .voteDown{
+  content: url
   background: none;
   border:none;
   margin: 0;
