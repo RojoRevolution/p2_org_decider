@@ -1,0 +1,41 @@
+<%- include('partials/dash/head'); %>
+
+    <body>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-2 py sidebar">
+                    <div class="my-3 text-center">
+                        <a href="/dashboard"><img src="/images/dashboard/yaynay_logo.png" alt="yay or nay logo"></a>
+                    </div>
+                    <!-- Add new Category Partial -->
+                    <%- include('partials/dash/addNewCategory'); %>
+                </div>
+                <div class="mt-3">
+                    <!-- Header Partial -->
+                    <%- include('partials/dash/sidebar-nav'); %>
+                </div>
+            </div>
+            <div class="col marg-pad-0 main-content">
+                <!-- Header -->
+                <div>
+                    <%- include('partials/dash/header'); %>
+                </div>
+                <!--  Category Data Block-->
+                <div>
+                    <%- include('partials/dash/category-data'); %>
+                </div>
+
+                <!--  Category Vote Block-->
+                <div>
+                    <%- include('partials/dash/vote-block'); %>
+                </div>
+                <!--  Category Suggestion Block-->
+                <div>
+                    <%- include('partials/dash/suggestion-block'); %>
+                </div>
+
+            </div>
+        </div>
+        <!-- Bootstrap Required JS and jQuery Scripts -->
+        <%- include('partials/dash/all_scripts'); %>
+    </body>
