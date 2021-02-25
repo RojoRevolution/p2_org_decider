@@ -4,9 +4,9 @@
 
 ## Links
 
-![GitHub Link](https://github.com/RojoRevolution/p2_org_decider)
+[GitHub Link](https://github.com/RojoRevolution/p2_org_decider)
 
-![Deployed App on Heroku](https://p002-yay-or-nay.herokuapp.com/)
+[Deployed App on Heroku](https://p002-yay-or-nay.herokuapp.com/)
 
 
 ## Project Description
@@ -34,10 +34,10 @@ The Scope of this project ended up being much larger than we had anticipated, an
 
 ## Contributors
 
-* ![David Rojo](https://github.com/RojoRevolution)
-* ![Trevor Smith](https://github.com/trevorsmithbanjo)
-* ![Stephen Price](https://github.com/stephenlprice)
-* ![Richard Gabaree](https://github.com/richardgabaree)
+* [David Rojo](https://github.com/RojoRevolution)
+* [Trevor Smith](https://github.com/trevorsmithbanjo)
+* [Stephen Price](https://github.com/stephenlprice)
+* [Richard Gabaree](https://github.com/richardgabaree)
 
 
 ## License
