@@ -214,6 +214,13 @@ background:#d22e41;
   color:#d8cdbb;
 }
 
+.close-icon {
+  color: #545454;
+  font-size: .75rem;
+  top: 5px;
+  right: 5px;
+}
+
 .voteCount {
   margin: 0;
   padding: 2px 6px 0;
