@@ -69,8 +69,6 @@ document.addEventListener("DOMContentLoaded", () => {
             })
             .catch(handleLoginErr);
     }
-
-
     handleLoginErr = (err) => {
         alert(text(responseJSON))
         console.log(err)
@@ -84,8 +82,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const newSuggestBlock = document.getElementById('newSuggestBlock')
     const closeSuggest = document.getElementById('suggestionClose')
     const suggestForm = document.getElementById('suggestForm')
-    const ideasDiv = document.getElementById('ideasBlock')
-
+    const suggestionCardsDiv = document.getElementById('suggestionCardBlock')
 
 
 
@@ -137,6 +134,34 @@ document.addEventListener("DOMContentLoaded", () => {
                 console.log(err);
             })
     }
+
+    // Event Listener for the Move Up To A Vote Buttons
+    suggestionCardsDiv.addEventListener('click', (event) => {
+        event.preventDefault(event)
+        // btnID will target the row by ID
+        let btnID = event.target.getAttribute('data-attribute')
+        console.log(`Button ID is: ${btnID}`)
+
+        putToVoteFetch(btnID);
+        // Reload the page so we can change the render location 
+        location.reload();
+    });
+
+    const putToVoteFetch = (rowId) => {
+        fetch(`/api/ideas/${rowId}`, {
+            method: 'PUT',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+        })
+            .then((response) => {
+                response.json()
+            })
+            .catch((err) => {
+                console.log(err);
+            })
+    }
+
 
 
 
